@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chest X-ray mask reading study</title>
+<style>
+  :root{
+    --bg:#0c1016; --panel:#131923; --line:#242e3c; --line2:#33404f;
+    --ink:#e6ecf3; --ink-dim:#8fa1b5; --ink-faint:#5d6f83;
+    --accent:#6fb6c9; --lesion:#e8703a; --good:#7bc490; --warn:#d9a441;
+    --r:6px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{
+    background:var(--bg); color:var(--ink);
+    font:15px/1.55 ui-sans-serif,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  button{font:inherit;color:inherit;cursor:pointer}
+  a{color:var(--accent)}
+
+  /* ---------- shell ---------- */
+  header{
+    display:flex;align-items:center;gap:18px;
+    padding:10px 20px;border-bottom:1px solid var(--line);background:var(--panel);
+    position:sticky;top:0;z-index:10;
+  }
+  .brand{font-weight:600;letter-spacing:.01em}
+  .brand span{color:var(--ink-faint);font-weight:400;margin-left:8px}
+  .spacer{flex:1}
+  .who{color:var(--ink-dim);font-size:13px}
+  .ghost{
+    background:none;border:1px solid var(--line2);border-radius:var(--r);
+    padding:5px 11px;font-size:13px;color:var(--ink-dim);
+  }
+  .ghost:hover{border-color:var(--accent);color:var(--ink)}
+
+  .sync{
+    font-size:12.5px;color:var(--ink-faint);display:inline-flex;align-items:center;gap:7px;
+    padding:4px 10px;border:1px solid var(--line);border-radius:20px;white-space:nowrap
+  }
+  .sync::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ink-faint)}
+  .sync[data-state=ok]{color:var(--good)}       .sync[data-state=ok]::before{background:var(--good)}
+  .sync[data-state=busy]{color:var(--accent)}   .sync[data-state=busy]::before{background:var(--accent)}
+  .sync[data-state=queued]{color:var(--warn)}   .sync[data-state=queued]::before{background:var(--warn)}
+  .sync[data-state=off]{color:var(--ink-faint)}
+  .banner{
+    background:#2a1f14;border:1px solid #5c4526;color:#e0c58a;border-radius:var(--r);
+    padding:11px 14px;margin-bottom:16px;font-size:13.5px
+  }
+  .bar{height:3px;background:#1b2431}
+  .bar>i{display:block;height:100%;background:var(--accent);transition:width .2s}
+
+  main{max-width:1180px;margin:0 auto;padding:22px 20px 60px}
+
+  /* ---------- start / rubric ---------- */
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:26px 28px}
+  .card h1{font-size:23px;margin:0 0 6px;font-weight:600}
+  .card h2{font-size:15px;margin:26px 0 8px;font-weight:600;color:var(--ink)}
+  .lede{color:var(--ink-dim);margin:0 0 4px;max-width:70ch}
+  .rubric{width:100%;border-collapse:collapse;margin-top:10px;font-size:13.5px}
+  .rubric th,.rubric td{border:1px solid var(--line);padding:7px 10px;vertical-align:top;text-align:left}
+  .rubric th{background:#18202c;color:var(--ink-dim);font-weight:600}
+  .rubric td:first-child{width:44px;text-align:center;color:var(--accent);font-weight:600}
+  input[type=text]{
+    background:#0e141d;border:1px solid var(--line2);border-radius:var(--r);
+    color:var(--ink);padding:9px 12px;font:inherit;width:260px;
+  }
+  input[type=text]:focus{outline:2px solid var(--accent);outline-offset:1px}
+  .primary{
+    background:var(--accent);color:#08222a;border:none;border-radius:var(--r);
+    padding:10px 20px;font-weight:600;
+  }
+  .primary:hover{filter:brightness(1.08)}
+
+  /* ---------- reading view ---------- */
+  .study{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:24px;align-items:start}
+  figure{margin:0;background:#0a0e14;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  figure img{display:block;width:100%;height:auto;image-rendering:auto}
+  figcaption{
+    display:flex;justify-content:space-between;gap:12px;
+    padding:8px 12px;border-top:1px solid var(--line);
+    color:var(--ink-faint);font-size:12.5px
+  }
+  .legend{display:flex;gap:14px;flex-wrap:wrap}
+  .legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;vertical-align:1px}
+
+  .prompt{
+    background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--lesion);
+    border-radius:var(--r);padding:13px 15px;margin-bottom:18px
+  }
+  .prompt .req{color:var(--ink-faint);font-size:12px;margin-bottom:3px}
+  .prompt p{margin:0;font-size:16px;line-height:1.45}
+
+  .q{border-top:1px solid var(--line);padding:15px 0}
+  .q:first-of-type{border-top:none;padding-top:4px}
+  .q h3{margin:0 0 2px;font-size:14.5px;font-weight:600}
+  .q p{margin:0 0 10px;color:var(--ink-dim);font-size:13px}
+  .scale{display:flex;gap:6px}
+  .scale button{
+    flex:1;background:#0e141d;border:1px solid var(--line2);border-radius:var(--r);
+    padding:10px 0;font-size:15px;font-weight:600;color:var(--ink-dim);
+  }
+  .scale button:hover{border-color:var(--accent);color:var(--ink)}
+  .scale button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:#08222a}
+  .q.active h3::after{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;
+    background:var(--accent);margin-left:8px;vertical-align:2px}
+
+  .extras{display:flex;gap:10px;align-items:center;margin-top:16px}
+  .extras input[type=text]{flex:1;width:auto}
+  .flagbtn[aria-pressed=true]{border-color:var(--warn);color:var(--warn)}
+
+  .nav{display:flex;gap:10px;align-items:center;margin-top:18px}
+  .nav .count{margin-left:auto;color:var(--ink-faint);font-size:13px}
+
+  .hint{color:var(--ink-faint);font-size:12.5px;margin-top:14px;line-height:1.7}
+  kbd{
+    background:#0e141d;border:1px solid var(--line2);border-bottom-width:2px;border-radius:4px;
+    padding:1px 6px;font:12px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--ink-dim)
+  }
+  .done{text-align:center;padding:50px 20px}
+  .done h1{font-size:22px}
+  @media (max-width:900px){
+    .study{grid-template-columns:1fr}
+    header{padding:10px 14px}
+    main{padding:16px 14px 50px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">Mask reading study<span id="hdr-sub">chest X-ray semantic masks</span></div>
+  <div class="spacer"></div>
+  <div class="who" id="who"></div>
+  <span class="sync" id="sync" title="connection to the results sheet"></span>
+  <button class="ghost" id="btn-help">Scoring guide</button>
+  <button class="ghost" id="btn-save">Download a copy</button>
+</header>
+<div class="bar"><i id="prog" style="width:0"></i></div>
+
+<main id="main"></main>
+
+<script>
+/* ============================================================ config */
+const DIMS = [
+  { key:"anatomy",  title:"Anatomical plausibility",
+    ask:"Could this region be a real lesion in this anatomy — right compartment, plausible shape, plausible border?",
+    anchors:["Impossible: region sits outside any plausible structure","Poor: largely misplaced or anatomically incoherent",
+             "Borderline: right neighbourhood, wrong shape or spill-over","Good: plausible siting with minor boundary issues",
+             "Excellent: indistinguishable from an expert annotation"] },
+  { key:"location",  title:"Location matches the request",
+    ask:"Does the region fall in the zone and side named in the request?",
+    anchors:["Wrong side or wrong organ","Right side, clearly wrong zone","Overlaps the named zone but centred elsewhere",
+             "In the named zone, small spill outside","Exactly the named zone"] },
+  { key:"severity", title:"Extent matches the request",
+    ask:"Is the size and spread what you would expect for the stated severity?",
+    anchors:["Extent contradicts the request","Far too small or too extensive","Noticeably off, one grade away",
+             "About right, mild mismatch","Matches the stated severity"] },
+];
+const LS = k => "maskeval_v1_" + k;
+
+/* Google Sheet endpoint. Paste the /exec URL of the deployed Apps Script web app
+   (see apps_script/Code.gs). Leave empty to run the study fully offline. */
+const ENDPOINT = "https://script.google.com/macros/s/AKfycbxVAeP8Ilh6o3y-Z0RGT348BGYbFLiaI3HeOGNLYZ8EV_oNSAQ6BkZxA6_b_MgrmvAF6Q/exec";
+
+/* ============================================================ state */
+let ITEMS = [], ORDER = [], rater = "", cur = 0, res = {}, tStart = 0, dimFocus = 0;
+let outbox = [], sending = false, sendTimer = null, lastOk = null;
+const SESSION = localStorage.getItem(LS("session")) ||
+  (Date.now().toString(36) + Math.random().toString(36).slice(2, 7));
+localStorage.setItem(LS("session"), SESSION);
+
+/* deterministic per-rater shuffle so order effects do not line up across readers */
+function seededShuffle(arr, seedStr){
+  let h = 2166136261;
+  for (const c of seedStr){ h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); }
+  const rnd = () => { h ^= h<<13; h ^= h>>>17; h ^= h<<5; return ((h>>>0) % 100000) / 100000; };
+  const a = arr.slice();
+  for (let i=a.length-1;i>0;i--){ const j = Math.floor(rnd()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+  return a;
+}
+
+async function boot(){
+  const r = await fetch("items.json");
+  ITEMS = (await r.json()).items;
+  rater = localStorage.getItem(LS("rater")) || "";
+  res = JSON.parse(localStorage.getItem(LS("res")) || "{}");
+  outbox = JSON.parse(localStorage.getItem(LS("outbox")) || "[]");
+  paintSync();
+  setInterval(flush, 15000);
+  window.addEventListener("online", flush);
+  window.addEventListener("beforeunload", e => {
+    if (outbox.length){ e.preventDefault(); e.returnValue = ""; }
+  });
+  flush();
+  if (rater){ start(rater, false); } else { screenStart(); }
+}
+
+/* ============================================================ sheet sync */
+/* Rows are queued locally and pushed to the Google Sheet. The queue survives a
+   reload, so a dropped connection costs nothing but a delay. */
+
+function queue(uid){
+  if (!ENDPOINT) return;
+  const r = res[uid] || {}, it = ITEMS.find(x => x.uid === uid) || {};
+  const row = {
+    rater, uid, session: SESSION,
+    order_position: ORDER.indexOf(ITEMS.indexOf(it)) + 1,
+    anatomy: r.anatomy || "", location: r.location || "", severity: r.severity || "",
+    flag: r.flag ? 1 : 0, note: r.note || "", seconds: r.secs || "",
+    client_ts: r.ts || new Date().toISOString(),
+    prompt: it.prompt || "", disease: it.disease || ""
+  };
+  outbox = outbox.filter(x => x.uid !== uid || x.rater !== rater);   // keep only the latest edit
+  outbox.push(row);
+  localStorage.setItem(LS("outbox"), JSON.stringify(outbox));
+  paintSync();
+  clearTimeout(sendTimer);
+  sendTimer = setTimeout(flush, 800);
+}
+
+async function flush(){
+  if (!ENDPOINT || sending || !outbox.length) return;
+  sending = true; paintSync("busy");
+  const batch = outbox.slice(0, 40);
+  try {
+    const resp = await fetch(ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },  // simple request, no preflight
+      body: JSON.stringify({ rows: batch })
+    });
+    const out = await resp.json();
+    if (!out.ok) throw new Error(out.error || "sheet rejected the rows");
+    const done = new Set(batch.map(b => b.rater + "|" + b.uid));
+    outbox = outbox.filter(x => !done.has(x.rater + "|" + x.uid));
+    localStorage.setItem(LS("outbox"), JSON.stringify(outbox));
+    lastOk = new Date();
+  } catch (err) {
+    console.warn("sheet sync failed, will retry:", err);
+  } finally {
+    sending = false;
+    paintSync();
+    if (outbox.length && !sendTimer) sendTimer = setTimeout(() => { sendTimer = null; flush(); }, 8000);
+  }
+}
+
+function paintSync(force){
+  const el = document.getElementById("sync");
+  if (!el) return;
+  if (!ENDPOINT){ el.dataset.state = "off"; el.textContent = "Saved on this device"; return; }
+  if (force === "busy"){ el.dataset.state = "busy"; el.textContent = "Saving\u2026"; return; }
+  if (outbox.length){ el.dataset.state = "queued"; el.textContent = outbox.length + " waiting to save"; return; }
+  el.dataset.state = "ok";
+  el.textContent = lastOk ? "Saved " + lastOk.toLocaleTimeString([], {hour:"2-digit", minute:"2-digit"})
+                          : "Connected to the sheet";
+}
+
+/* ============================================================ screens */
+function screenStart(){
+  document.getElementById("main").innerHTML = `
+  <div class="card">
+    <h1>Rate ${ITEMS.length} chest X-ray semantic masks</h1>
+    <p class="lede">Each panel shows an anatomy map — lungs, heart, mediastinum — with one pathology
+    region drawn on top in orange, plus the clinical request that region was meant to satisfy.
+    Score three things per panel on a 1–5 scale. Roughly 15–20 seconds per panel is normal.</p>
+
+    <h2>What you are not told</h2>
+    <p class="lede">Some regions are expert annotations from real studies and some are machine generated.
+    The order is shuffled and the two are drawn identically, so judge each panel on its own.</p>
+
+    ${rubricHTML()}
+
+    <h2>Start</h2>
+    <p class="lede" id="save-note"></p>
+    <div class="extras" style="max-width:520px">
+      <input type="text" id="rid" placeholder="Reader ID, e.g. R01" value="${rater}">
+      <button class="primary" id="go">Begin reading</button>
+    </div>
+  </div>`;
+  document.getElementById("save-note").textContent = ENDPOINT
+    ? "Your reader ID labels every row you send. Scores go to the study spreadsheet as you work — "
+    + "there is nothing to submit at the end, and a dropped connection just delays the upload."
+    : "Your reader ID goes into the results file. Progress is saved in this browser, so you can close "
+    + "the tab and pick up where you left off on the same machine.";
+  const go = () => {
+    const v = document.getElementById("rid").value.trim();
+    if (!v){ document.getElementById("rid").focus(); return; }
+    start(v, true);
+  };
+  document.getElementById("go").onclick = go;
+  document.getElementById("rid").onkeydown = e => { if (e.key === "Enter") go(); };
+}
+
+function rubricHTML(){
+  return DIMS.map(d => `
+    <h2>${d.title}</h2>
+    <p class="lede">${d.ask}</p>
+    <table class="rubric"><tbody>
+      ${d.anchors.map((a,i)=>`<tr><td>${i+1}</td><td>${a}</td></tr>`).join("")}
+    </tbody></table>`).join("");
+}
+
+function start(id, fresh){
+  rater = id;
+  localStorage.setItem(LS("rater"), rater);
+  ORDER = seededShuffle(ITEMS.map((_,i)=>i), rater);
+  document.getElementById("who").textContent = "Reader " + rater;
+  cur = fresh ? firstUnrated() : (parseInt(localStorage.getItem(LS("cur"))||"0",10) || firstUnrated());
+  render();
+}
+
+function firstUnrated(){
+  for (let i=0;i<ORDER.length;i++){ if (!complete(ITEMS[ORDER[i]].uid)) return i; }
+  return ORDER.length;
+}
+function complete(uid){
+  const r = res[uid];
+  return r && DIMS.every(d => r[d.key]);
+}
+
+/* ============================================================ reading view */
+function render(){
+  if (cur >= ORDER.length) return screenDone();
+  localStorage.setItem(LS("cur"), cur);
+  const it = ITEMS[ORDER[cur]];
+  const r = res[it.uid] || {};
+  tStart = performance.now();
+  dimFocus = DIMS.findIndex(d => !r[d.key]);
+  if (dimFocus < 0) dimFocus = 0;
+
+  document.getElementById("prog").style.width = (100*cur/ORDER.length) + "%";
+  document.getElementById("main").innerHTML = `
+  <div class="study">
+    <figure>
+      <img id="panel" src="${it.img}" alt="anatomy map with one pathology region">
+      <figcaption>
+        <div class="legend">
+          <span><i style="background:#223c4c"></i>Lung</span>
+          <span><i style="background:#3a2e3f"></i>Heart</span>
+          <span><i style="background:#2c3542"></i>Mediastinum</span>
+          <span><i style="background:var(--lesion)"></i>Pathology region</span>
+        </div>
+        <div>R / L as labelled</div>
+      </figcaption>
+    </figure>
+
+    <section>
+      <div class="prompt">
+        <div class="req">Request this mask should satisfy</div>
+        <p>${it.prompt}</p>
+      </div>
+      ${DIMS.map((d,di)=>`
+        <div class="q ${di===dimFocus?"active":""}" data-di="${di}">
+          <h3>${d.title}</h3>
+          <p>${d.ask}</p>
+          <div class="scale">
+            ${[1,2,3,4,5].map(v=>`<button data-k="${d.key}" data-v="${v}" title="${v} — ${d.anchors[v-1]}"
+               aria-pressed="${r[d.key]===v}">${v}</button>`).join("")}
+          </div>
+        </div>`).join("")}
+
+      <div class="extras">
+        <button class="ghost flagbtn" id="flag" aria-pressed="${!!r.flag}">Flag for discussion</button>
+        <input type="text" id="note" placeholder="Optional note" value="${(r.note||"").replace(/"/g,"&quot;")}">
+      </div>
+
+      <div class="nav">
+        <button class="ghost" id="prev">Back</button>
+        <button class="primary" id="next">Next</button>
+        <span class="count">${cur+1} of ${ORDER.length} · ${Object.values(res).filter(x=>DIMS.every(d=>x[d.key])).length} done</span>
+      </div>
+
+      <p class="hint">
+        <kbd>1</kbd>–<kbd>5</kbd> score the highlighted question ·
+        <kbd>↑</kbd><kbd>↓</kbd> switch question ·
+        <kbd>Enter</kbd> next panel · <kbd>Backspace</kbd> previous · <kbd>F</kbd> flag
+      </p>
+    </section>
+  </div>`;
+
+  document.querySelectorAll(".scale button").forEach(b => {
+    b.onclick = () => setScore(b.dataset.k, +b.dataset.v);
+  });
+  document.getElementById("flag").onclick = e => {
+    const on = e.currentTarget.getAttribute("aria-pressed") !== "true";
+    e.currentTarget.setAttribute("aria-pressed", on);
+    store(it.uid, { flag: on });
+  };
+  document.getElementById("note").onchange = e => store(it.uid, { note: e.target.value });
+  document.getElementById("prev").onclick = () => { if (cur>0){ cur--; render(); } };
+  document.getElementById("next").onclick = () => { cur++; render(); };
+}
+
+function setScore(key, val){
+  const it = ITEMS[ORDER[cur]];
+  store(it.uid, { [key]: val, secs: +( (performance.now()-tStart)/1000 ).toFixed(1) });
+  document.querySelectorAll(`.scale button[data-k="${key}"]`).forEach(b =>
+    b.setAttribute("aria-pressed", +b.dataset.v === val));
+
+  const next = DIMS.findIndex(d => !(res[it.uid]||{})[d.key]);
+  if (next < 0){ setTimeout(() => { cur++; render(); }, 220); }
+  else { dimFocus = next; paintFocus(); }
+}
+
+function paintFocus(){
+  document.querySelectorAll(".q").forEach(q =>
+    q.classList.toggle("active", +q.dataset.di === dimFocus));
+}
+
+function store(uid, patch){
+  res[uid] = Object.assign({ uid, rater }, res[uid] || {}, patch,
+                           { ts: new Date().toISOString() });
+  localStorage.setItem(LS("res"), JSON.stringify(res));
+  queue(uid);
+}
+
+function screenDone(){
+  document.getElementById("prog").style.width = "100%";
+  const pending = outbox.length;
+  document.getElementById("main").innerHTML = `
+  <div class="card done">
+    <h1>All ${ORDER.length} panels scored</h1>
+    ${ENDPOINT && pending ? `<div class="banner">${pending} score${pending>1?"s":""} still
+      waiting to reach the spreadsheet. Keep this tab open on a working connection, or press
+      Send now.</div>` : ""}
+    <p class="lede" style="margin:0 auto 22px">${
+      ENDPOINT
+        ? (pending ? "Everything else is already in the study spreadsheet."
+                   : "Everything is in the study spreadsheet. Nothing further is needed \u2014 you can close the tab.")
+        : "Download the results file and send it back to the study coordinator."}</p>
+    ${ENDPOINT ? `<button class="primary" id="send">Send now</button>` : ""}
+    <button class="${ENDPOINT ? "ghost" : "primary"}" id="dl" style="margin-left:10px">Download a copy</button>
+    <button class="ghost" id="rev" style="margin-left:10px">Review from the start</button>
+  </div>`;
+  document.getElementById("dl").onclick = download;
+  document.getElementById("rev").onclick = () => { cur = 0; render(); };
+  const sb = document.getElementById("send");
+  if (sb) sb.onclick = async () => { await flush(); screenDone(); };
+}
+
+/* ============================================================ export */
+function download(){
+  const head = ["rater","uid","order_position","anatomy","location","severity","flag","note","seconds","timestamp"];
+  const rows = [head.join(",")];
+  ORDER.forEach((ix, pos) => {
+    const it = ITEMS[ix], r = res[it.uid];
+    if (!r) return;
+    const cell = v => `"${String(v ?? "").replace(/"/g,'""')}"`;
+    rows.push([rater, it.uid, pos+1, r.anatomy||"", r.location||"", r.severity||"",
+               r.flag?1:0, cell(r.note||""), r.secs||"", r.ts||""].join(","));
+  });
+  const blob = new Blob([rows.join("\n")], { type:"text/csv" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `maskeval_${rater || "reader"}_${new Date().toISOString().slice(0,10)}.csv`;
+  a.click();
+}
+
+/* ============================================================ chrome + keys */
+document.getElementById("btn-save").onclick = download;
+document.getElementById("btn-help").onclick = () => {
+  const w = window.open("", "_blank");
+  w.document.write(`<title>Scoring guide</title>
+    <style>body{font:15px/1.6 ui-sans-serif,system-ui;max-width:44rem;margin:40px auto;padding:0 20px;
+    background:#0c1016;color:#e6ecf3}h2{font-size:15px;margin-top:26px}
+    table{width:100%;border-collapse:collapse;font-size:13.5px}
+    td,th{border:1px solid #242e3c;padding:7px 10px;text-align:left}
+    td:first-child{width:44px;text-align:center;color:#6fb6c9;font-weight:600}
+    p{color:#8fa1b5}</style>` + rubricHTML());
+  w.document.close();
+};
+
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "INPUT") return;
+  if (!ORDER.length || cur >= ORDER.length) return;
+  if (e.key >= "1" && e.key <= "5"){ setScore(DIMS[dimFocus].key, +e.key); e.preventDefault(); }
+  else if (e.key === "ArrowDown"){ dimFocus = (dimFocus+1) % DIMS.length; paintFocus(); e.preventDefault(); }
+  else if (e.key === "ArrowUp"){ dimFocus = (dimFocus+DIMS.length-1) % DIMS.length; paintFocus(); e.preventDefault(); }
+  else if (e.key === "Enter"){ cur++; render(); }
+  else if (e.key === "Backspace"){ if (cur>0){ cur--; render(); } e.preventDefault(); }
+  else if (e.key.toLowerCase() === "f"){ document.getElementById("flag")?.click(); }
+});
+
+boot();
+</script>
+</body>
+</html>
