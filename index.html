@@ -19,11 +19,11 @@
     -webkit-font-smoothing:antialiased;
   }
   button{font:inherit;color:inherit;cursor:pointer}
+  button:disabled{opacity:.6;cursor:default}
   a{color:var(--accent)}
 
-  /* ---------- shell ---------- */
   header{
-    display:flex;align-items:center;gap:18px;
+    display:flex;align-items:center;gap:14px;
     padding:10px 20px;border-bottom:1px solid var(--line);background:var(--panel);
     position:sticky;top:0;z-index:10;
   }
@@ -42,27 +42,24 @@
     padding:4px 10px;border:1px solid var(--line);border-radius:20px;white-space:nowrap
   }
   .sync::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ink-faint)}
-  .sync[data-state=ok]{color:var(--good)}       .sync[data-state=ok]::before{background:var(--good)}
-  .sync[data-state=busy]{color:var(--accent)}   .sync[data-state=busy]::before{background:var(--accent)}
-  .sync[data-state=queued]{color:var(--warn)}   .sync[data-state=queued]::before{background:var(--warn)}
-  .sync[data-state=off]{color:var(--ink-faint)}
+  .sync[data-state=ok]{color:var(--good)}      .sync[data-state=ok]::before{background:var(--good)}
+  .sync[data-state=busy]{color:var(--accent)}  .sync[data-state=busy]::before{background:var(--accent)}
+  .sync[data-state=queued]{color:var(--warn)}  .sync[data-state=queued]::before{background:var(--warn)}
+
   .banner{
     background:#2a1f14;border:1px solid #5c4526;color:#e0c58a;border-radius:var(--r);
     padding:11px 14px;margin-bottom:16px;font-size:13.5px
   }
   .bar{height:3px;background:#1b2431}
   .bar>i{display:block;height:100%;background:var(--accent);transition:width .2s}
-
   main{max-width:1180px;margin:0 auto;padding:22px 20px 60px}
 
-  /* ---------- start / rubric ---------- */
   .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:26px 28px}
   .card h1{font-size:23px;margin:0 0 6px;font-weight:600}
   .card h2{font-size:15px;margin:26px 0 8px;font-weight:600;color:var(--ink)}
   .lede{color:var(--ink-dim);margin:0 0 4px;max-width:70ch}
   .rubric{width:100%;border-collapse:collapse;margin-top:10px;font-size:13.5px}
   .rubric th,.rubric td{border:1px solid var(--line);padding:7px 10px;vertical-align:top;text-align:left}
-  .rubric th{background:#18202c;color:var(--ink-dim);font-weight:600}
   .rubric td:first-child{width:44px;text-align:center;color:var(--accent);font-weight:600}
   input[type=text]{
     background:#0e141d;border:1px solid var(--line2);border-radius:var(--r);
@@ -75,10 +72,9 @@
   }
   .primary:hover{filter:brightness(1.08)}
 
-  /* ---------- reading view ---------- */
   .study{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:24px;align-items:start}
   figure{margin:0;background:#0a0e14;border:1px solid var(--line);border-radius:8px;overflow:hidden}
-  figure img{display:block;width:100%;height:auto;image-rendering:auto}
+  figure img{display:block;width:100%;height:auto}
   figcaption{
     display:flex;justify-content:space-between;gap:12px;
     padding:8px 12px;border-top:1px solid var(--line);
@@ -108,8 +104,8 @@
   .q.active h3::after{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;
     background:var(--accent);margin-left:8px;vertical-align:2px}
 
-  .extras{display:flex;gap:10px;align-items:center;margin-top:16px}
-  .extras input[type=text]{flex:1;width:auto}
+  .extras{display:flex;gap:10px;align-items:center;margin-top:16px;flex-wrap:wrap}
+  .extras input[type=text]{flex:1;width:auto;min-width:160px}
   .flagbtn[aria-pressed=true]{border-color:var(--warn);color:var(--warn)}
 
   .nav{display:flex;gap:10px;align-items:center;margin-top:18px}
@@ -124,7 +120,7 @@
   .done h1{font-size:22px}
   @media (max-width:900px){
     .study{grid-template-columns:1fr}
-    header{padding:10px 14px}
+    header{padding:10px 14px;gap:10px}
     main{padding:16px 14px 50px}
   }
 </style>
@@ -132,7 +128,7 @@
 <body>
 
 <header>
-  <div class="brand">Mask reading study<span id="hdr-sub">chest X-ray semantic masks</span></div>
+  <div class="brand">Mask reading study<span>chest X-ray semantic masks</span></div>
   <div class="spacer"></div>
   <div class="who" id="who"></div>
   <span class="sync" id="sync" title="connection to the results sheet"></span>
@@ -145,35 +141,43 @@
 
 <script>
 /* ============================================================ config */
+
+/* Apps Script web app /exec URL. Writes and reads both go through GET query
+   parameters (?action=write&data=... / ?action=read&evaluator_id=...), which is
+   what keeps this working from a static GitHub Pages origin without a preflight.
+   Leave empty to run the study offline. */
+const ENDPOINT = "https://script.google.com/macros/s/AKfycbxVAeP8Ilh6o3y-Z0RGT348BGYbFLiaI3HeOGNLYZ8EV_oNSAQ6BkZxA6_b_MgrmvAF6Q/exec";
+
+/* local key -> sheet column */
 const DIMS = [
-  { key:"anatomy",  title:"Anatomical plausibility",
+  { key:"anatomy", col:"anatomy", title:"Anatomical plausibility",
     ask:"Could this region be a real lesion in this anatomy — right compartment, plausible shape, plausible border?",
     anchors:["Impossible: region sits outside any plausible structure","Poor: largely misplaced or anatomically incoherent",
              "Borderline: right neighbourhood, wrong shape or spill-over","Good: plausible siting with minor boundary issues",
              "Excellent: indistinguishable from an expert annotation"] },
-  { key:"location",  title:"Location matches the request",
+  { key:"location", col:"accurate_location", title:"Location matches the request",
     ask:"Does the region fall in the zone and side named in the request?",
     anchors:["Wrong side or wrong organ","Right side, clearly wrong zone","Overlaps the named zone but centred elsewhere",
              "In the named zone, small spill outside","Exactly the named zone"] },
-  { key:"severity", title:"Extent matches the request",
+  { key:"severity", col:"accurate_severity", title:"Extent matches the request",
     ask:"Is the size and spread what you would expect for the stated severity?",
     anchors:["Extent contradicts the request","Far too small or too extensive","Noticeably off, one grade away",
              "About right, mild mismatch","Matches the stated severity"] },
 ];
-const LS = k => "maskeval_v1_" + k;
 
-/* Google Sheet endpoint. Paste the /exec URL of the deployed Apps Script web app
-   (see apps_script/Code.gs). Leave empty to run the study fully offline. */
-const ENDPOINT = "https://script.google.com/macros/s/AKfycbxVAeP8Ilh6o3y-Z0RGT348BGYbFLiaI3HeOGNLYZ8EV_oNSAQ6BkZxA6_b_MgrmvAF6Q/exec";
+const SHEET_COLS = ["evaluator_id","evaluator_name","sample_id","image_path","text_prompt",
+                    "anatomy","accurate_location","accurate_severity","flag","note",
+                    "time_spent_sec","review_started_at","review_submitted_at"];
+
+const LS = k => "maskeval_v1_" + k;
+const iso = () => new Date().toISOString();
 
 /* ============================================================ state */
-let ITEMS = [], ORDER = [], rater = "", cur = 0, res = {}, tStart = 0, dimFocus = 0;
-let outbox = [], sending = false, sendTimer = null, lastOk = null;
-const SESSION = localStorage.getItem(LS("session")) ||
-  (Date.now().toString(36) + Math.random().toString(36).slice(2, 7));
-localStorage.setItem(LS("session"), SESSION);
+let ITEMS = [], BY_UID = {}, ORDER = [], cur = 0, res = {}, dimFocus = 0;
+let evaluatorId = "", evaluatorName = "";
+let outbox = [], sending = false, sendTimer = null, lastOk = null, tPanel = 0;
 
-/* deterministic per-rater shuffle so order effects do not line up across readers */
+/* deterministic per-reader shuffle so order effects do not line up across readers */
 function seededShuffle(arr, seedStr){
   let h = 2166136261;
   for (const c of seedStr){ h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); }
@@ -186,9 +190,13 @@ function seededShuffle(arr, seedStr){
 async function boot(){
   const r = await fetch("items.json");
   ITEMS = (await r.json()).items;
-  rater = localStorage.getItem(LS("rater")) || "";
-  res = JSON.parse(localStorage.getItem(LS("res")) || "{}");
+  ITEMS.forEach(it => BY_UID[it.uid] = it);
+
+  evaluatorId   = localStorage.getItem(LS("eid")) || "";
+  evaluatorName = localStorage.getItem(LS("ename")) || "";
+  res    = JSON.parse(localStorage.getItem(LS("res")) || "{}");
   outbox = JSON.parse(localStorage.getItem(LS("outbox")) || "[]");
+
   paintSync();
   setInterval(flush, 15000);
   window.addEventListener("online", flush);
@@ -196,61 +204,109 @@ async function boot(){
     if (outbox.length){ e.preventDefault(); e.returnValue = ""; }
   });
   flush();
-  if (rater){ start(rater, false); } else { screenStart(); }
+
+  if (evaluatorId){
+    start(evaluatorId, evaluatorName);
+    pullRemote().then(n => { if (n) render(); }).catch(() => {});
+  } else {
+    screenStart();
+  }
 }
 
 /* ============================================================ sheet sync */
-/* Rows are queued locally and pushed to the Google Sheet. The queue survives a
-   reload, so a dropped connection costs nothing but a delay. */
 
+function rowFor(uid){
+  const r = res[uid] || {}, it = BY_UID[uid] || {};
+  return {
+    evaluator_id: evaluatorId,
+    evaluator_name: evaluatorName,
+    sample_id: uid,
+    image_path: it.img || "",
+    text_prompt: it.prompt || "",
+    anatomy: r.anatomy || "",
+    accurate_location: r.location || "",
+    accurate_severity: r.severity || "",
+    flag: r.flag ? 1 : "",
+    note: r.note || "",
+    time_spent_sec: r.time_spent_sec || "",
+    review_started_at: r.review_started_at || "",
+    review_submitted_at: r.review_submitted_at || ""
+  };
+}
+
+/* One queued row per panel: a revised score replaces the pending one. */
 function queue(uid){
   if (!ENDPOINT) return;
-  const r = res[uid] || {}, it = ITEMS.find(x => x.uid === uid) || {};
-  const row = {
-    rater, uid, session: SESSION,
-    order_position: ORDER.indexOf(ITEMS.indexOf(it)) + 1,
-    anatomy: r.anatomy || "", location: r.location || "", severity: r.severity || "",
-    flag: r.flag ? 1 : 0, note: r.note || "", seconds: r.secs || "",
-    client_ts: r.ts || new Date().toISOString(),
-    prompt: it.prompt || "", disease: it.disease || ""
-  };
-  outbox = outbox.filter(x => x.uid !== uid || x.rater !== rater);   // keep only the latest edit
-  outbox.push(row);
+  outbox = outbox.filter(x => !(x.sample_id === uid && x.evaluator_id === evaluatorId));
+  outbox.push(rowFor(uid));
   localStorage.setItem(LS("outbox"), JSON.stringify(outbox));
   paintSync();
   clearTimeout(sendTimer);
-  sendTimer = setTimeout(flush, 800);
+  sendTimer = setTimeout(() => { sendTimer = null; flush(); }, 900);
 }
 
 async function flush(){
   if (!ENDPOINT || sending || !outbox.length) return;
   sending = true; paintSync("busy");
-  const batch = outbox.slice(0, 40);
   try {
-    const resp = await fetch(ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "text/plain;charset=utf-8" },  // simple request, no preflight
-      body: JSON.stringify({ rows: batch })
-    });
-    const out = await resp.json();
-    if (!out.ok) throw new Error(out.error || "sheet rejected the rows");
-    const done = new Set(batch.map(b => b.rater + "|" + b.uid));
-    outbox = outbox.filter(x => !done.has(x.rater + "|" + x.uid));
-    localStorage.setItem(LS("outbox"), JSON.stringify(outbox));
-    lastOk = new Date();
+    while (outbox.length){
+      const row = outbox[0];
+      const url = ENDPOINT + "?action=write&data=" + encodeURIComponent(JSON.stringify(row));
+      const out = await (await fetch(url)).json();
+      if (out.status !== "ok") throw new Error(out.message || "the sheet rejected the row");
+      outbox.shift();
+      localStorage.setItem(LS("outbox"), JSON.stringify(outbox));
+      lastOk = new Date();
+    }
   } catch (err) {
-    console.warn("sheet sync failed, will retry:", err);
+    console.warn("write failed, will retry:", err);
   } finally {
     sending = false;
     paintSync();
-    if (outbox.length && !sendTimer) sendTimer = setTimeout(() => { sendTimer = null; flush(); }, 8000);
+    if (outbox.length && !sendTimer){
+      sendTimer = setTimeout(() => { sendTimer = null; flush(); }, 8000);
+    }
   }
+}
+
+/* Pull this reader's earlier rows back out of the sheet so a session can resume
+   on another machine. The newer of the two copies wins. */
+async function pullRemote(){
+  if (!ENDPOINT || !evaluatorId) return 0;
+  paintSync("busy");
+  const url = ENDPOINT + "?action=read&evaluator_id=" + encodeURIComponent(evaluatorId);
+  const out = await (await fetch(url)).json();
+  if (out.status !== "ok") throw new Error(out.message || "the sheet read failed");
+
+  let restored = 0;
+  (out.rows || []).forEach(row => {
+    const uid = String(row.sample_id || "").trim();
+    if (!uid || !BY_UID[uid]) return;
+    const mine = res[uid] || {};
+    if ((mine.updated_at || "") >= (row.updated_at || "")) return;   // local edit is newer
+    const rec = {
+      uid,
+      flag: row.flag === "1" || row.flag === "true" || row.flag === "TRUE",
+      note: row.note || "",
+      time_spent_sec: parseFloat(row.time_spent_sec) || 0,
+      review_started_at: row.review_started_at || "",
+      review_submitted_at: row.review_submitted_at || "",
+      updated_at: row.updated_at || ""
+    };
+    DIMS.forEach(d => { const v = parseInt(row[d.col], 10); if (v >= 1 && v <= 5) rec[d.key] = v; });
+    res[uid] = rec;
+    restored++;
+  });
+  localStorage.setItem(LS("res"), JSON.stringify(res));
+  lastOk = new Date();
+  paintSync();
+  return restored;
 }
 
 function paintSync(force){
   const el = document.getElementById("sync");
   if (!el) return;
-  if (!ENDPOINT){ el.dataset.state = "off"; el.textContent = "Saved on this device"; return; }
+  if (!ENDPOINT){ el.dataset.state = ""; el.textContent = "Saved on this device"; return; }
   if (force === "busy"){ el.dataset.state = "busy"; el.textContent = "Saving\u2026"; return; }
   if (outbox.length){ el.dataset.state = "queued"; el.textContent = outbox.length + " waiting to save"; return; }
   el.dataset.state = "ok";
@@ -275,23 +331,46 @@ function screenStart(){
 
     <h2>Start</h2>
     <p class="lede" id="save-note"></p>
-    <div class="extras" style="max-width:520px">
-      <input type="text" id="rid" placeholder="Reader ID, e.g. R01" value="${rater}">
+    <div class="extras" style="max-width:660px">
+      <input type="text" id="eid" placeholder="Reader ID, e.g. R01" value="${evaluatorId}" style="width:190px;flex:none">
+      <input type="text" id="ename" placeholder="Your name" value="${evaluatorName}">
       <button class="primary" id="go">Begin reading</button>
     </div>
+    <p class="lede" id="start-msg" style="margin-top:12px"></p>
   </div>`;
+
   document.getElementById("save-note").textContent = ENDPOINT
-    ? "Your reader ID labels every row you send. Scores go to the study spreadsheet as you work — "
-    + "there is nothing to submit at the end, and a dropped connection just delays the upload."
-    : "Your reader ID goes into the results file. Progress is saved in this browser, so you can close "
-    + "the tab and pick up where you left off on the same machine.";
-  const go = () => {
-    const v = document.getElementById("rid").value.trim();
-    if (!v){ document.getElementById("rid").focus(); return; }
-    start(v, true);
+    ? "Scores reach the study spreadsheet as you work, labelled with your ID and name. There is "
+    + "nothing to submit at the end, and entering the same reader ID again picks up where you left "
+    + "off, including on another computer."
+    : "Progress is saved in this browser, so you can close the tab and resume on the same machine.";
+
+  const go = async () => {
+    const id = document.getElementById("eid").value.trim();
+    const nm = document.getElementById("ename").value.trim();
+    if (!id){ document.getElementById("eid").focus(); return; }
+    if (!nm){ document.getElementById("ename").focus(); return; }
+
+    const btn = document.getElementById("go"), msg = document.getElementById("start-msg");
+    evaluatorId = id; evaluatorName = nm;
+    btn.disabled = true; btn.textContent = "Checking\u2026";
+    let restored = 0, failed = false;
+    try { restored = await pullRemote(); } catch (err){ failed = true; }
+    btn.disabled = false; btn.textContent = "Begin reading";
+
+    if (failed){
+      msg.textContent = "Could not reach the spreadsheet just now. You can start reading — scores "
+                      + "upload by themselves once the connection is back.";
+      setTimeout(() => start(id, nm), 1800);
+    } else {
+      if (restored) msg.textContent = "Picked up " + restored + " panels you scored earlier.";
+      start(id, nm);
+    }
   };
   document.getElementById("go").onclick = go;
-  document.getElementById("rid").onkeydown = e => { if (e.key === "Enter") go(); };
+  const onEnter = e => { if (e.key === "Enter") go(); };
+  document.getElementById("eid").onkeydown = onEnter;
+  document.getElementById("ename").onkeydown = onEnter;
 }
 
 function rubricHTML(){
@@ -303,31 +382,41 @@ function rubricHTML(){
     </tbody></table>`).join("");
 }
 
-function start(id, fresh){
-  rater = id;
-  localStorage.setItem(LS("rater"), rater);
-  ORDER = seededShuffle(ITEMS.map((_,i)=>i), rater);
-  document.getElementById("who").textContent = "Reader " + rater;
-  cur = fresh ? firstUnrated() : (parseInt(localStorage.getItem(LS("cur"))||"0",10) || firstUnrated());
+function start(id, name){
+  evaluatorId = id;
+  evaluatorName = name;
+  localStorage.setItem(LS("eid"), evaluatorId);
+  localStorage.setItem(LS("ename"), evaluatorName);
+  ORDER = seededShuffle(ITEMS.map((_,i)=>i), evaluatorId);
+  document.getElementById("who").textContent = evaluatorName + " \u00b7 " + evaluatorId;
+  cur = firstUnrated();
   render();
 }
 
+function complete(uid){
+  const r = res[uid];
+  return !!r && DIMS.every(d => r[d.key]);
+}
+function doneCount(){
+  return ITEMS.filter(it => complete(it.uid)).length;
+}
 function firstUnrated(){
   for (let i=0;i<ORDER.length;i++){ if (!complete(ITEMS[ORDER[i]].uid)) return i; }
   return ORDER.length;
 }
-function complete(uid){
-  const r = res[uid];
-  return r && DIMS.every(d => r[d.key]);
-}
 
 /* ============================================================ reading view */
 function render(){
+  if (!ORDER.length) return;
   if (cur >= ORDER.length) return screenDone();
-  localStorage.setItem(LS("cur"), cur);
+
   const it = ITEMS[ORDER[cur]];
-  const r = res[it.uid] || {};
-  tStart = performance.now();
+  const r = res[it.uid] || (res[it.uid] = { uid: it.uid });
+  if (!r.review_started_at){                       // first time this panel is opened
+    r.review_started_at = iso();
+    localStorage.setItem(LS("res"), JSON.stringify(res));
+  }
+  tPanel = performance.now();
   dimFocus = DIMS.findIndex(d => !r[d.key]);
   if (dimFocus < 0) dimFocus = 0;
 
@@ -370,7 +459,7 @@ function render(){
       <div class="nav">
         <button class="ghost" id="prev">Back</button>
         <button class="primary" id="next">Next</button>
-        <span class="count">${cur+1} of ${ORDER.length} · ${Object.values(res).filter(x=>DIMS.every(d=>x[d.key])).length} done</span>
+        <span class="count">${cur+1} of ${ORDER.length} · ${doneCount()} done</span>
       </div>
 
       <p class="hint">
@@ -396,7 +485,7 @@ function render(){
 
 function setScore(key, val){
   const it = ITEMS[ORDER[cur]];
-  store(it.uid, { [key]: val, secs: +( (performance.now()-tStart)/1000 ).toFixed(1) });
+  store(it.uid, { [key]: val });
   document.querySelectorAll(`.scale button[data-k="${key}"]`).forEach(b =>
     b.setAttribute("aria-pressed", +b.dataset.v === val));
 
@@ -411,8 +500,16 @@ function paintFocus(){
 }
 
 function store(uid, patch){
-  res[uid] = Object.assign({ uid, rater }, res[uid] || {}, patch,
-                           { ts: new Date().toISOString() });
+  const now = performance.now();
+  const spent = Math.min(120, Math.max(0, (now - tPanel) / 1000));   // cap an idle tab
+  tPanel = now;
+  const prev = res[uid] || {};
+  res[uid] = Object.assign({ uid }, prev, patch, {
+    time_spent_sec: +((prev.time_spent_sec || 0) + spent).toFixed(1),
+    review_started_at: prev.review_started_at || iso(),
+    review_submitted_at: iso(),
+    updated_at: iso()
+  });
   localStorage.setItem(LS("res"), JSON.stringify(res));
   queue(uid);
 }
@@ -423,13 +520,12 @@ function screenDone(){
   document.getElementById("main").innerHTML = `
   <div class="card done">
     <h1>All ${ORDER.length} panels scored</h1>
-    ${ENDPOINT && pending ? `<div class="banner">${pending} score${pending>1?"s":""} still
-      waiting to reach the spreadsheet. Keep this tab open on a working connection, or press
-      Send now.</div>` : ""}
+    ${ENDPOINT && pending ? `<div class="banner">${pending} score${pending>1?"s":""} still waiting to
+      reach the spreadsheet. Keep this tab open on a working connection, or press Send now.</div>` : ""}
     <p class="lede" style="margin:0 auto 22px">${
       ENDPOINT
         ? (pending ? "Everything else is already in the study spreadsheet."
-                   : "Everything is in the study spreadsheet. Nothing further is needed \u2014 you can close the tab.")
+                   : "Everything is in the study spreadsheet \u2014 you can close the tab.")
         : "Download the results file and send it back to the study coordinator."}</p>
     ${ENDPOINT ? `<button class="primary" id="send">Send now</button>` : ""}
     <button class="${ENDPOINT ? "ghost" : "primary"}" id="dl" style="margin-left:10px">Download a copy</button>
@@ -441,21 +537,19 @@ function screenDone(){
   if (sb) sb.onclick = async () => { await flush(); screenDone(); };
 }
 
-/* ============================================================ export */
+/* ============================================================ backup export */
 function download(){
-  const head = ["rater","uid","order_position","anatomy","location","severity","flag","note","seconds","timestamp"];
-  const rows = [head.join(",")];
-  ORDER.forEach((ix, pos) => {
-    const it = ITEMS[ix], r = res[it.uid];
-    if (!r) return;
-    const cell = v => `"${String(v ?? "").replace(/"/g,'""')}"`;
-    rows.push([rater, it.uid, pos+1, r.anatomy||"", r.location||"", r.severity||"",
-               r.flag?1:0, cell(r.note||""), r.secs||"", r.ts||""].join(","));
+  const cell = v => `"${String(v ?? "").replace(/"/g,'""')}"`;
+  const rows = [SHEET_COLS.concat("updated_at").join(",")];
+  ORDER.forEach(ix => {
+    const uid = ITEMS[ix].uid, r = res[uid];
+    if (!r || !DIMS.some(d => r[d.key])) return;
+    const o = rowFor(uid);
+    rows.push(SHEET_COLS.map(c => cell(o[c])).concat(cell(r.updated_at || "")).join(","));
   });
-  const blob = new Blob([rows.join("\n")], { type:"text/csv" });
   const a = document.createElement("a");
-  a.href = URL.createObjectURL(blob);
-  a.download = `maskeval_${rater || "reader"}_${new Date().toISOString().slice(0,10)}.csv`;
+  a.href = URL.createObjectURL(new Blob([rows.join("\n")], { type:"text/csv" }));
+  a.download = `maskeval_${evaluatorId || "reader"}_${iso().slice(0,10)}.csv`;
   a.click();
 }
 
@@ -481,7 +575,7 @@ document.addEventListener("keydown", e => {
   else if (e.key === "ArrowUp"){ dimFocus = (dimFocus+DIMS.length-1) % DIMS.length; paintFocus(); e.preventDefault(); }
   else if (e.key === "Enter"){ cur++; render(); }
   else if (e.key === "Backspace"){ if (cur>0){ cur--; render(); } e.preventDefault(); }
-  else if (e.key.toLowerCase() === "f"){ document.getElementById("flag")?.click(); }
+  else if (e.key.toLowerCase() === "f"){ const f = document.getElementById("flag"); if (f) f.click(); }
 });
 
 boot();
