@@ -1,6081 +1,1806 @@
 {
- "version": 2,
- "prompt_version": "v2",
+ "version": 1,
  "n_items": 200,
  "items": [
   {
    "uid": "f8339d951a62",
    "img": "img/f8339d951a62.png",
-   "idx": 0,
+   "prompt": "A Chest X-ray semantic mask with mild Atelectasis on right lower lung.",
    "disease": "Atelectasis",
-   "prompt": "linear atelectasis in the right lower zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "linear",
-     "mod"
-    ],
-    [
-     "atelectasis",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lower zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "linear",
-   "location_text": "right lower zone"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 0
   },
   {
    "uid": "c2b7979d507f",
    "img": "img/c2b7979d507f.png",
-   "idx": 1,
+   "prompt": "A Chest X-ray semantic mask with severe Fibrosis on bilateral lung.",
    "disease": "Fibrosis",
-   "prompt": "diffuse fibrosis throughout both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "diffuse",
-     "mod"
-    ],
-    [
-     "fibrosis",
-     "find"
-    ],
-    [
-     "throughout",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "diffuse",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 1
   },
   {
    "uid": "c834a3875da6",
    "img": "img/c834a3875da6.png",
-   "idx": 2,
+   "prompt": "A Chest X-ray semantic mask with moderate Consolidation on bilateral lung.",
    "disease": "Consolidation",
-   "prompt": "severe consolidation in the right lower zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "severe",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lower zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "severe",
-   "location_text": "right lower zone"
+   "severity": "moderate",
+   "location": "bilateral lung",
+   "idx": 2
   },
   {
    "uid": "8fe01fb66a3b",
    "img": "img/8fe01fb66a3b.png",
-   "idx": 3,
+   "prompt": "A Chest X-ray semantic mask with severe Emphysema on left lung.",
    "disease": "Emphysema",
-   "prompt": "emphysema affecting both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "emphysema",
-     "find"
-    ],
-    [
-     "affecting",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "left lung",
+   "idx": 3
   },
   {
    "uid": "bb50fefd54b8",
    "img": "img/bb50fefd54b8.png",
-   "idx": 4,
+   "prompt": "A Chest X-ray semantic mask with mild Pleural Thickening on bilateral lung.",
    "disease": "Pleural Thickening",
-   "prompt": "extensive left lateral pleural thickening",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "extensive",
-     "mod"
-    ],
-    [
-     "left lateral",
-     "loc"
-    ],
-    [
-     "pleural thickening",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "extensive",
-   "location_text": "left lateral"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 4
   },
   {
    "uid": "6a5b78cd7185",
    "img": "img/6a5b78cd7185.png",
-   "idx": 5,
+   "prompt": "A Chest X-ray semantic mask with severe Consolidation on bilateral lung.",
    "disease": "Consolidation",
-   "prompt": "moderate consolidation in both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "moderate",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "moderate",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 5
   },
   {
    "uid": "ddc3063f1dfe",
    "img": "img/ddc3063f1dfe.png",
-   "idx": 6,
+   "prompt": "A Chest X-ray semantic mask with mild Pleural Thickening on right upper lung.",
    "disease": "Pleural Thickening",
-   "prompt": "right apical pleural thickening",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "right apical",
-     "loc"
-    ],
-    [
-     "pleural thickening",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right apical"
+   "severity": "mild",
+   "location": "right upper lung",
+   "idx": 6
   },
   {
    "uid": "12d40089255a",
    "img": "img/12d40089255a.png",
-   "idx": 7,
+   "prompt": "A Chest X-ray semantic mask with mild Pleural Thickening on right upper lung.",
    "disease": "Pleural Thickening",
-   "prompt": "right apical pleural thickening",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "right apical",
-     "loc"
-    ],
-    [
-     "pleural thickening",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right apical"
+   "severity": "mild",
+   "location": "right upper lung",
+   "idx": 7
   },
   {
    "uid": "f9784d7f7103",
    "img": "img/f9784d7f7103.png",
-   "idx": 8,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lower lung.",
    "disease": "Effusion",
-   "prompt": "small bilateral pleural effusions",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "bilateral",
-     "loc"
-    ],
-    [
-     "pleural effusions",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "bilateral"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 8
   },
   {
    "uid": "875767618a89",
    "img": "img/875767618a89.png",
-   "idx": 9,
+   "prompt": "A Chest X-ray semantic mask with mild Pleural Thickening on right lung.",
    "disease": "Pleural Thickening",
-   "prompt": "right basal pleural thickening",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "right basal",
-     "loc"
-    ],
-    [
-     "pleural thickening",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right basal"
+   "severity": "mild",
+   "location": "right lung",
+   "idx": 9
   },
   {
    "uid": "0b4e711a801d",
    "img": "img/0b4e711a801d.png",
-   "idx": 10,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on left lower lung.",
    "disease": "Consolidation",
-   "prompt": "moderate consolidation in the left lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "moderate",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "moderate",
-   "location_text": "left lung"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 10
   },
   {
    "uid": "2952f269fbb7",
    "img": "img/2952f269fbb7.png",
-   "idx": 11,
+   "prompt": "A Chest X-ray semantic mask with mild Fracture on right middle lung.",
    "disease": "Fracture",
-   "prompt": "a fracture of the right upper ribs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "fracture",
-     "find"
-    ],
-    [
-     "of the",
-     "plain"
-    ],
-    [
-     "right upper ribs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right upper ribs"
+   "severity": "mild",
+   "location": "right middle lung",
+   "idx": 11
   },
   {
    "uid": "ada266766c7e",
    "img": "img/ada266766c7e.png",
-   "idx": 12,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lower lung.",
    "disease": "Effusion",
-   "prompt": "a small left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "left"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 12
   },
   {
    "uid": "46a23d1cdc5c",
    "img": "img/46a23d1cdc5c.png",
-   "idx": 13,
-   "disease": "Nodule",
    "prompt": "A Chest X-ray semantic mask with mild Nodule on right lower lung.",
-   "prompt_version": "v1",
-   "parts": [
-    [
-     "A Chest X-ray semantic mask with mild Nodule on right lower lung.",
-     "plain"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ]
+   "disease": "Nodule",
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 13
   },
   {
    "uid": "9f9bd33fd3f6",
    "img": "img/9f9bd33fd3f6.png",
-   "idx": 14,
+   "prompt": "A Chest X-ray semantic mask with mild Fracture on right upper lung.",
    "disease": "Fracture",
-   "prompt": "a fracture of the right upper ribs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "fracture",
-     "find"
-    ],
-    [
-     "of the",
-     "plain"
-    ],
-    [
-     "right upper ribs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right upper ribs"
+   "severity": "mild",
+   "location": "right upper lung",
+   "idx": 14
   },
   {
    "uid": "df5d542d1ae0",
    "img": "img/df5d542d1ae0.png",
-   "idx": 15,
+   "prompt": "A Chest X-ray semantic mask with mild Fracture on left lung.",
    "disease": "Fracture",
-   "prompt": "fractures of the left upper ribs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "fractures",
-     "find"
-    ],
-    [
-     "of the",
-     "plain"
-    ],
-    [
-     "left upper ribs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "left upper ribs"
+   "severity": "mild",
+   "location": "left lung",
+   "idx": 15
   },
   {
    "uid": "3e0d00748688",
    "img": "img/3e0d00748688.png",
-   "idx": 16,
+   "prompt": "A Chest X-ray semantic mask with severe Effusion on bilateral lung.",
    "disease": "Effusion",
-   "prompt": "large bilateral pleural effusions",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "large",
-     "mod"
-    ],
-    [
-     "bilateral",
-     "loc"
-    ],
-    [
-     "pleural effusions",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "large",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 16
   },
   {
    "uid": "0caa93142f0e",
    "img": "img/0caa93142f0e.png",
-   "idx": 17,
+   "prompt": "A Chest X-ray semantic mask with severe Diffuse Nodule on bilateral lung.",
    "disease": "Diffuse Nodule",
-   "prompt": "diffuse nodularity throughout both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "diffuse nodularity",
-     "find"
-    ],
-    [
-     "throughout",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 17
   },
   {
    "uid": "3af62dc7b165",
    "img": "img/3af62dc7b165.png",
-   "idx": 18,
+   "prompt": "A Chest X-ray semantic mask with severe Cardiomegaly on heart.",
    "disease": "Cardiomegaly",
-   "prompt": "marked cardiomegaly",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "marked",
-     "mod"
-    ],
-    [
-     "cardiomegaly",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "severity"
-   ],
-   "modifier": "marked",
-   "location_text": "cardiac silhouette"
+   "severity": "severe",
+   "location": "heart",
+   "idx": 18
   },
   {
    "uid": "0efba8b1bb13",
    "img": "img/0efba8b1bb13.png",
-   "idx": 19,
+   "prompt": "A Chest X-ray semantic mask with mild Pleural Thickening on right lung.",
    "disease": "Pleural Thickening",
-   "prompt": "right basal pleural thickening",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "right basal",
-     "loc"
-    ],
-    [
-     "pleural thickening",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right basal"
+   "severity": "mild",
+   "location": "right lung",
+   "idx": 19
   },
   {
    "uid": "4edfb8614df2",
    "img": "img/4edfb8614df2.png",
-   "idx": 20,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on bilateral lung.",
    "disease": "Effusion",
-   "prompt": "small bilateral pleural effusions",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "bilateral",
-     "loc"
-    ],
-    [
-     "pleural effusions",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "bilateral"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 20
   },
   {
    "uid": "f024d40e1055",
    "img": "img/f024d40e1055.png",
-   "idx": 21,
+   "prompt": "A Chest X-ray semantic mask with severe Emphysema on left lung.",
    "disease": "Emphysema",
-   "prompt": "emphysema affecting both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "emphysema",
-     "find"
-    ],
-    [
-     "affecting",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "left lung",
+   "idx": 21
   },
   {
    "uid": "4d750f285055",
    "img": "img/4d750f285055.png",
-   "idx": 22,
+   "prompt": "A Chest X-ray semantic mask with severe Diffuse Nodule on left lung.",
    "disease": "Diffuse Nodule",
-   "prompt": "multiple nodules in the left lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "multiple nodules",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "left lung"
+   "severity": "severe",
+   "location": "left lung",
+   "idx": 22
   },
   {
    "uid": "f12bef7a4301",
    "img": "img/f12bef7a4301.png",
-   "idx": 23,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on right lung.",
    "disease": "Effusion",
-   "prompt": "a small right pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "right",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "right"
+   "severity": "mild",
+   "location": "right lung",
+   "idx": 23
   },
   {
    "uid": "94279196b233",
    "img": "img/94279196b233.png",
-   "idx": 24,
+   "prompt": "A Chest X-ray semantic mask with severe Cardiomegaly on heart.",
    "disease": "Cardiomegaly",
-   "prompt": "marked cardiomegaly",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "marked",
-     "mod"
-    ],
-    [
-     "cardiomegaly",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "severity"
-   ],
-   "modifier": "marked",
-   "location_text": "cardiac silhouette"
+   "severity": "severe",
+   "location": "heart",
+   "idx": 24
   },
   {
    "uid": "17e73f310f45",
    "img": "img/17e73f310f45.png",
-   "idx": 25,
+   "prompt": "A Chest X-ray semantic mask with mild Pleural Thickening on bilateral lung.",
    "disease": "Pleural Thickening",
-   "prompt": "extensive left lateral pleural thickening",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "extensive",
-     "mod"
-    ],
-    [
-     "left lateral",
-     "loc"
-    ],
-    [
-     "pleural thickening",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "extensive",
-   "location_text": "left lateral"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 25
   },
   {
    "uid": "fe17098549bc",
    "img": "img/fe17098549bc.png",
-   "idx": 26,
+   "prompt": "A Chest X-ray semantic mask with severe Fibrosis on bilateral lung.",
    "disease": "Fibrosis",
-   "prompt": "focal fibrosis in both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "focal",
-     "mod"
-    ],
-    [
-     "fibrosis",
-     "find"
-    ],
-    [
-     "in",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "focal",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 26
   },
   {
    "uid": "37f0e4f94ba5",
    "img": "img/37f0e4f94ba5.png",
-   "idx": 27,
+   "prompt": "A Chest X-ray semantic mask with mild Pneumothorax on right lower lung.",
    "disease": "Pneumothorax",
-   "prompt": "a small right basal pneumothorax",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "right basal",
-     "loc"
-    ],
-    [
-     "pneumothorax",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "right basal"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 27
   },
   {
    "uid": "626b4cf4715e",
    "img": "img/626b4cf4715e.png",
-   "idx": 28,
+   "prompt": "A Chest X-ray semantic mask with mild Mass on right lower lung.",
    "disease": "Mass",
-   "prompt": "a mass in the right lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "mass",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right lung"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 28
   },
   {
    "uid": "ce5c1c54fecd",
    "img": "img/ce5c1c54fecd.png",
-   "idx": 29,
+   "prompt": "A Chest X-ray semantic mask with severe Atelectasis on right lung.",
    "disease": "Atelectasis",
-   "prompt": "lobar atelectasis throughout the right lung with mediastinal shift to the left",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "lobar",
-     "mod"
-    ],
-    [
-     "atelectasis",
-     "find"
-    ],
-    [
-     "throughout the",
-     "plain"
-    ],
-    [
-     "right lung",
-     "loc"
-    ],
-    [
-     "with mediastinal shift to the left",
-     "plain"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "lobar",
-   "location_text": "right throughout"
+   "severity": "severe",
+   "location": "right lung",
+   "idx": 29
   },
   {
    "uid": "3056a2334d78",
    "img": "img/3056a2334d78.png",
-   "idx": 30,
+   "prompt": "A Chest X-ray semantic mask with moderate Consolidation on right lung.",
    "disease": "Consolidation",
-   "prompt": "moderate consolidation in the right lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "moderate",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "moderate",
-   "location_text": "right lung"
+   "severity": "moderate",
+   "location": "right lung",
+   "idx": 30
   },
   {
    "uid": "7de4472987d7",
    "img": "img/7de4472987d7.png",
-   "idx": 31,
+   "prompt": "A Chest X-ray semantic mask with severe Cardiomegaly on heart.",
    "disease": "Cardiomegaly",
-   "prompt": "marked cardiomegaly",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "marked",
-     "mod"
-    ],
-    [
-     "cardiomegaly",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "severity"
-   ],
-   "modifier": "marked",
-   "location_text": "cardiac silhouette"
+   "severity": "severe",
+   "location": "heart",
+   "idx": 31
   },
   {
    "uid": "42936896d824",
    "img": "img/42936896d824.png",
-   "idx": 32,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lower lung.",
    "disease": "Effusion",
-   "prompt": "a small left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "left"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 32
   },
   {
    "uid": "f4eae55a45bc",
    "img": "img/f4eae55a45bc.png",
-   "idx": 33,
+   "prompt": "A Chest X-ray semantic mask with mild Fracture on right middle lung.",
    "disease": "Fracture",
-   "prompt": "a fracture of the right upper ribs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "fracture",
-     "find"
-    ],
-    [
-     "of the",
-     "plain"
-    ],
-    [
-     "right upper ribs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right upper ribs"
+   "severity": "mild",
+   "location": "right middle lung",
+   "idx": 33
   },
   {
    "uid": "39cc021e5e7e",
    "img": "img/39cc021e5e7e.png",
-   "idx": 34,
+   "prompt": "A Chest X-ray semantic mask with severe Consolidation on bilateral lung.",
    "disease": "Consolidation",
-   "prompt": "severe consolidation throughout both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "severe",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "throughout",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "severe",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 34
   },
   {
    "uid": "7fd3de8c0a37",
    "img": "img/7fd3de8c0a37.png",
-   "idx": 35,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on bilateral lung.",
    "disease": "Consolidation",
-   "prompt": "moderate consolidation in the right lower zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "moderate",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lower zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "moderate",
-   "location_text": "right lower zone"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 35
   },
   {
    "uid": "0872d0093a7a",
    "img": "img/0872d0093a7a.png",
-   "idx": 36,
+   "prompt": "A Chest X-ray semantic mask with severe Emphysema on bilateral lung.",
    "disease": "Emphysema",
-   "prompt": "emphysema affecting both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "emphysema",
-     "find"
-    ],
-    [
-     "affecting",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 36
   },
   {
    "uid": "8999ef17af60",
    "img": "img/8999ef17af60.png",
-   "idx": 37,
+   "prompt": "A Chest X-ray semantic mask with severe Cardiomegaly on heart.",
    "disease": "Cardiomegaly",
-   "prompt": "marked cardiomegaly",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "marked",
-     "mod"
-    ],
-    [
-     "cardiomegaly",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "severity"
-   ],
-   "modifier": "marked",
-   "location_text": "cardiac silhouette"
+   "severity": "severe",
+   "location": "heart",
+   "idx": 37
   },
   {
    "uid": "e9211410b556",
    "img": "img/e9211410b556.png",
-   "idx": 38,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lower lung.",
    "disease": "Effusion",
-   "prompt": "a small left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "left"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 38
   },
   {
    "uid": "0e9fa9b8e2f6",
    "img": "img/0e9fa9b8e2f6.png",
-   "idx": 39,
+   "prompt": "A Chest X-ray semantic mask with severe Effusion on bilateral lung.",
    "disease": "Effusion",
-   "prompt": "large bilateral pleural effusions",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "large",
-     "mod"
-    ],
-    [
-     "bilateral",
-     "loc"
-    ],
-    [
-     "pleural effusions",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "large",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 39
   },
   {
    "uid": "71a45428eff0",
    "img": "img/71a45428eff0.png",
-   "idx": 40,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lung.",
    "disease": "Effusion",
-   "prompt": "a small left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "left"
+   "severity": "mild",
+   "location": "left lung",
+   "idx": 40
   },
   {
    "uid": "b92a4ba28b35",
    "img": "img/b92a4ba28b35.png",
-   "idx": 41,
+   "prompt": "A Chest X-ray semantic mask with severe Consolidation on bilateral lung.",
    "disease": "Consolidation",
-   "prompt": "moderate consolidation in both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "moderate",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "moderate",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 41
   },
   {
    "uid": "018ac039d4f4",
    "img": "img/018ac039d4f4.png",
-   "idx": 42,
+   "prompt": "A Chest X-ray semantic mask with mild Fracture on right middle lung.",
    "disease": "Fracture",
-   "prompt": "a fracture of the right upper ribs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "fracture",
-     "find"
-    ],
-    [
-     "of the",
-     "plain"
-    ],
-    [
-     "right upper ribs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right upper ribs"
+   "severity": "mild",
+   "location": "right middle lung",
+   "idx": 42
   },
   {
    "uid": "a4f3f97a0c7c",
    "img": "img/a4f3f97a0c7c.png",
-   "idx": 43,
+   "prompt": "A Chest X-ray semantic mask with mild Fracture on right middle lung.",
    "disease": "Fracture",
-   "prompt": "a fracture of the right upper ribs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "fracture",
-     "find"
-    ],
-    [
-     "of the",
-     "plain"
-    ],
-    [
-     "right upper ribs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right upper ribs"
+   "severity": "mild",
+   "location": "right middle lung",
+   "idx": 43
   },
   {
    "uid": "359dcf755c79",
    "img": "img/359dcf755c79.png",
-   "idx": 44,
+   "prompt": "A Chest X-ray semantic mask with mild Fracture on right middle lung.",
    "disease": "Fracture",
-   "prompt": "a fracture of the right upper ribs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "fracture",
-     "find"
-    ],
-    [
-     "of the",
-     "plain"
-    ],
-    [
-     "right upper ribs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right upper ribs"
+   "severity": "mild",
+   "location": "right middle lung",
+   "idx": 44
   },
   {
    "uid": "7595b63adcef",
    "img": "img/7595b63adcef.png",
-   "idx": 45,
+   "prompt": "A Chest X-ray semantic mask with mild Fibrosis on left lower lung.",
    "disease": "Fibrosis",
-   "prompt": "focal fibrosis in the left lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "focal",
-     "mod"
-    ],
-    [
-     "fibrosis",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "focal",
-   "location_text": "left lung"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 45
   },
   {
    "uid": "d0b7aa926ebc",
    "img": "img/d0b7aa926ebc.png",
-   "idx": 46,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on heart.",
    "disease": "Consolidation",
-   "prompt": "mild consolidation in the retrocardiac region",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "mild",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "retrocardiac region",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "mild",
-   "location_text": "retrocardiac"
+   "severity": "mild",
+   "location": "heart",
+   "idx": 46
   },
   {
    "uid": "64ba49895130",
    "img": "img/64ba49895130.png",
-   "idx": 47,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lower lung.",
    "disease": "Effusion",
-   "prompt": "a small left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "left"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 47
   },
   {
    "uid": "0a29c7e473f9",
    "img": "img/0a29c7e473f9.png",
-   "idx": 48,
+   "prompt": "A Chest X-ray semantic mask with mild Mass on mediastinum.",
    "disease": "Mass",
-   "prompt": "a mass in the right lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "mass",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right lung"
+   "severity": "mild",
+   "location": "mediastinum",
+   "idx": 48
   },
   {
    "uid": "bc449ad7dbc3",
    "img": "img/bc449ad7dbc3.png",
-   "idx": 49,
+   "prompt": "A Chest X-ray semantic mask with moderate Cardiomegaly on heart.",
    "disease": "Cardiomegaly",
-   "prompt": "cardiomegaly",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "cardiomegaly",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy"
-   ],
-   "modifier": "",
-   "location_text": "cardiac silhouette"
+   "severity": "moderate",
+   "location": "heart",
+   "idx": 49
   },
   {
    "uid": "d123a7b665f4",
    "img": "img/d123a7b665f4.png",
-   "idx": 50,
+   "prompt": "A Chest X-ray semantic mask with mild Fracture on left lung.",
    "disease": "Fracture",
-   "prompt": "fractures of the left upper ribs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "fractures",
-     "find"
-    ],
-    [
-     "of the",
-     "plain"
-    ],
-    [
-     "left upper ribs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "left upper ribs"
+   "severity": "mild",
+   "location": "left lung",
+   "idx": 50
   },
   {
    "uid": "d1efbd73975f",
    "img": "img/d1efbd73975f.png",
-   "idx": 51,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on bilateral lung.",
    "disease": "Effusion",
-   "prompt": "small bilateral pleural effusions",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "bilateral",
-     "loc"
-    ],
-    [
-     "pleural effusions",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "bilateral"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 51
   },
   {
    "uid": "ba2f08712523",
    "img": "img/ba2f08712523.png",
-   "idx": 52,
+   "prompt": "A Chest X-ray semantic mask with moderate Fibrosis on left lung.",
    "disease": "Fibrosis",
-   "prompt": "diffuse fibrosis throughout both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "diffuse",
-     "mod"
-    ],
-    [
-     "fibrosis",
-     "find"
-    ],
-    [
-     "throughout",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "diffuse",
-   "location_text": "bilateral"
+   "severity": "moderate",
+   "location": "left lung",
+   "idx": 52
   },
   {
    "uid": "fa148f0363da",
    "img": "img/fa148f0363da.png",
-   "idx": 53,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on bilateral lung.",
    "disease": "Consolidation",
-   "prompt": "moderate consolidation in the right lower zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "moderate",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lower zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "moderate",
-   "location_text": "right lower zone"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 53
   },
   {
    "uid": "9cea764add0d",
    "img": "img/9cea764add0d.png",
-   "idx": 54,
+   "prompt": "A Chest X-ray semantic mask with mild Mass on bilateral lung.",
    "disease": "Mass",
-   "prompt": "multiple masss in both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "multiple masss",
-     "find"
-    ],
-    [
-     "in",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "bilateral"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 54
   },
   {
    "uid": "f57006f6545d",
    "img": "img/f57006f6545d.png",
-   "idx": 55,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on bilateral lung.",
    "disease": "Effusion",
-   "prompt": "small bilateral pleural effusions",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "bilateral",
-     "loc"
-    ],
-    [
-     "pleural effusions",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "bilateral"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 55
   },
   {
    "uid": "1459e8a4dba3",
    "img": "img/1459e8a4dba3.png",
-   "idx": 56,
-   "disease": "Calcification",
    "prompt": "A Chest X-ray semantic mask with mild Calcification on right lung.",
-   "prompt_version": "v1",
-   "parts": [
-    [
-     "A Chest X-ray semantic mask with mild Calcification on right lung.",
-     "plain"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ]
+   "disease": "Calcification",
+   "severity": "mild",
+   "location": "right lung",
+   "idx": 56
   },
   {
    "uid": "e49dbc166028",
    "img": "img/e49dbc166028.png",
-   "idx": 57,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on bilateral lung.",
    "disease": "Effusion",
-   "prompt": "small bilateral pleural effusions",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "bilateral",
-     "loc"
-    ],
-    [
-     "pleural effusions",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "bilateral"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 57
   },
   {
    "uid": "0c29c50129bc",
    "img": "img/0c29c50129bc.png",
-   "idx": 58,
+   "prompt": "A Chest X-ray semantic mask with severe Diffuse Nodule on bilateral lung.",
    "disease": "Diffuse Nodule",
-   "prompt": "diffuse nodularity throughout both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "diffuse nodularity",
-     "find"
-    ],
-    [
-     "throughout",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 58
   },
   {
    "uid": "aa56037fa036",
    "img": "img/aa56037fa036.png",
-   "idx": 59,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on right lower lung.",
    "disease": "Effusion",
-   "prompt": "a small right pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "right",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "right"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 59
   },
   {
    "uid": "080b99a7d491",
    "img": "img/080b99a7d491.png",
-   "idx": 60,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on left lung.",
    "disease": "Consolidation",
-   "prompt": "moderate consolidation in the left lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "moderate",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "moderate",
-   "location_text": "left lung"
+   "severity": "mild",
+   "location": "left lung",
+   "idx": 60
   },
   {
    "uid": "8d1defc9e176",
    "img": "img/8d1defc9e176.png",
-   "idx": 61,
+   "prompt": "A Chest X-ray semantic mask with mild Atelectasis on right lower lung.",
    "disease": "Atelectasis",
-   "prompt": "segmental atelectasis in the right lung with mediastinal shift to the left",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "segmental",
-     "mod"
-    ],
-    [
-     "atelectasis",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lung",
-     "loc"
-    ],
-    [
-     "with mediastinal shift to the left",
-     "plain"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "segmental",
-   "location_text": "right lung"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 61
   },
   {
    "uid": "5e41bc4cc9d0",
    "img": "img/5e41bc4cc9d0.png",
-   "idx": 62,
+   "prompt": "A Chest X-ray semantic mask with mild Nodule on left lower lung.",
    "disease": "Nodule",
-   "prompt": "multiple nodules in both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "multiple nodules",
-     "find"
-    ],
-    [
-     "in",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "bilateral"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 62
   },
   {
    "uid": "3a31ba8d4def",
    "img": "img/3a31ba8d4def.png",
-   "idx": 63,
+   "prompt": "A Chest X-ray semantic mask with severe Emphysema on bilateral lung.",
    "disease": "Emphysema",
-   "prompt": "emphysema affecting both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "emphysema",
-     "find"
-    ],
-    [
-     "affecting",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 63
   },
   {
    "uid": "2ea5f9221513",
    "img": "img/2ea5f9221513.png",
-   "idx": 64,
+   "prompt": "A Chest X-ray semantic mask with mild Nodule on left middle lung.",
    "disease": "Nodule",
-   "prompt": "a nodule in the left mid zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "nodule",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left mid zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "left mid zone"
+   "severity": "mild",
+   "location": "left middle lung",
+   "idx": 64
   },
   {
    "uid": "8a2d87119739",
    "img": "img/8a2d87119739.png",
-   "idx": 65,
+   "prompt": "A Chest X-ray semantic mask with moderate Effusion on left lung.",
    "disease": "Effusion",
-   "prompt": "a large left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "large",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "large",
-   "location_text": "left"
+   "severity": "moderate",
+   "location": "left lung",
+   "idx": 65
   },
   {
    "uid": "d05f107c4a55",
    "img": "img/d05f107c4a55.png",
-   "idx": 66,
-   "disease": "Nodule",
    "prompt": "A Chest X-ray semantic mask with mild Nodule on right lower lung.",
-   "prompt_version": "v1",
-   "parts": [
-    [
-     "A Chest X-ray semantic mask with mild Nodule on right lower lung.",
-     "plain"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ]
+   "disease": "Nodule",
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 66
   },
   {
    "uid": "97189a5ca81c",
    "img": "img/97189a5ca81c.png",
-   "idx": 67,
+   "prompt": "A Chest X-ray semantic mask with moderate Cardiomegaly on heart.",
    "disease": "Cardiomegaly",
-   "prompt": "cardiomegaly",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "cardiomegaly",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy"
-   ],
-   "modifier": "",
-   "location_text": "cardiac silhouette"
+   "severity": "moderate",
+   "location": "heart",
+   "idx": 67
   },
   {
    "uid": "06a1d55e5cce",
    "img": "img/06a1d55e5cce.png",
-   "idx": 68,
+   "prompt": "A Chest X-ray semantic mask with mild Pneumothorax on right upper lung.",
    "disease": "Pneumothorax",
-   "prompt": "a small right apical pneumothorax",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "right apical",
-     "loc"
-    ],
-    [
-     "pneumothorax",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "right apical"
+   "severity": "mild",
+   "location": "right upper lung",
+   "idx": 68
   },
   {
    "uid": "6b10482c3262",
    "img": "img/6b10482c3262.png",
-   "idx": 69,
+   "prompt": "A Chest X-ray semantic mask with mild Nodule on bilateral lung.",
    "disease": "Nodule",
-   "prompt": "multiple nodules in both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "multiple nodules",
-     "find"
-    ],
-    [
-     "in",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "bilateral"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 69
   },
   {
    "uid": "f9d06889d505",
    "img": "img/f9d06889d505.png",
-   "idx": 70,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on left lower lung.",
    "disease": "Consolidation",
-   "prompt": "mild consolidation in the retrocardiac region",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "mild",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "retrocardiac region",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "mild",
-   "location_text": "retrocardiac"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 70
   },
   {
    "uid": "11643e9de60a",
    "img": "img/11643e9de60a.png",
-   "idx": 71,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on right lower lung.",
    "disease": "Consolidation",
-   "prompt": "mild consolidation in the right lower zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "mild",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lower zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "mild",
-   "location_text": "right lower zone"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 71
   },
   {
    "uid": "e3e1e3b2d802",
    "img": "img/e3e1e3b2d802.png",
-   "idx": 72,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on bilateral lung.",
    "disease": "Effusion",
-   "prompt": "small bilateral pleural effusions",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "bilateral",
-     "loc"
-    ],
-    [
-     "pleural effusions",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "bilateral"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 72
   },
   {
    "uid": "dff2f6e45aad",
    "img": "img/dff2f6e45aad.png",
-   "idx": 73,
+   "prompt": "A Chest X-ray semantic mask with severe Atelectasis on right lung.",
    "disease": "Atelectasis",
-   "prompt": "lobar atelectasis throughout the right lung with mediastinal shift to the left",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "lobar",
-     "mod"
-    ],
-    [
-     "atelectasis",
-     "find"
-    ],
-    [
-     "throughout the",
-     "plain"
-    ],
-    [
-     "right lung",
-     "loc"
-    ],
-    [
-     "with mediastinal shift to the left",
-     "plain"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "lobar",
-   "location_text": "right throughout"
+   "severity": "severe",
+   "location": "right lung",
+   "idx": 73
   },
   {
    "uid": "962242bbcb0e",
    "img": "img/962242bbcb0e.png",
-   "idx": 74,
+   "prompt": "A Chest X-ray semantic mask with mild Calcification on left middle lung.",
    "disease": "Calcification",
-   "prompt": "calcified foci in the left lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "calcified foci",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "left lung"
+   "severity": "mild",
+   "location": "left middle lung",
+   "idx": 74
   },
   {
    "uid": "0c922650188d",
    "img": "img/0c922650188d.png",
-   "idx": 75,
+   "prompt": "A Chest X-ray semantic mask with mild Fibrosis on left lower lung.",
    "disease": "Fibrosis",
-   "prompt": "focal fibrosis in the left lower zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "focal",
-     "mod"
-    ],
-    [
-     "fibrosis",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left lower zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "focal",
-   "location_text": "left lower zone"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 75
   },
   {
    "uid": "4706f6eadc4c",
    "img": "img/4706f6eadc4c.png",
-   "idx": 76,
+   "prompt": "A Chest X-ray semantic mask with mild Pleural Thickening on left lung.",
    "disease": "Pleural Thickening",
-   "prompt": "extensive left basal pleural thickening",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "extensive",
-     "mod"
-    ],
-    [
-     "left basal",
-     "loc"
-    ],
-    [
-     "pleural thickening",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "extensive",
-   "location_text": "left basal"
+   "severity": "mild",
+   "location": "left lung",
+   "idx": 76
   },
   {
    "uid": "c27252197438",
    "img": "img/c27252197438.png",
-   "idx": 77,
+   "prompt": "A Chest X-ray semantic mask with mild Mass on mediastinum.",
    "disease": "Mass",
-   "prompt": "a mass in the right lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "mass",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right lung"
+   "severity": "mild",
+   "location": "mediastinum",
+   "idx": 77
   },
   {
    "uid": "1b6c045208d3",
    "img": "img/1b6c045208d3.png",
-   "idx": 78,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lung.",
    "disease": "Effusion",
-   "prompt": "a small left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "left"
+   "severity": "mild",
+   "location": "left lung",
+   "idx": 78
   },
   {
    "uid": "51180a8fc31b",
    "img": "img/51180a8fc31b.png",
-   "idx": 79,
+   "prompt": "A Chest X-ray semantic mask with moderate Consolidation on left lung.",
    "disease": "Consolidation",
-   "prompt": "severe consolidation throughout the left lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "severe",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "throughout the",
-     "plain"
-    ],
-    [
-     "left lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "severe",
-   "location_text": "left throughout"
+   "severity": "moderate",
+   "location": "left lung",
+   "idx": 79
   },
   {
    "uid": "93c2b0c20721",
    "img": "img/93c2b0c20721.png",
-   "idx": 80,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on left lower lung.",
    "disease": "Consolidation",
-   "prompt": "mild consolidation in the retrocardiac region",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "mild",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "retrocardiac region",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "mild",
-   "location_text": "retrocardiac"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 80
   },
   {
    "uid": "4593e057a6b3",
    "img": "img/4593e057a6b3.png",
-   "idx": 81,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on left lower lung.",
    "disease": "Consolidation",
-   "prompt": "mild consolidation in the retrocardiac region",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "mild",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "retrocardiac region",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "mild",
-   "location_text": "retrocardiac"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 81
   },
   {
    "uid": "f62e7dde854e",
    "img": "img/f62e7dde854e.png",
-   "idx": 82,
+   "prompt": "A Chest X-ray semantic mask with severe Effusion on bilateral lung.",
    "disease": "Effusion",
-   "prompt": "large bilateral pleural effusions",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "large",
-     "mod"
-    ],
-    [
-     "bilateral",
-     "loc"
-    ],
-    [
-     "pleural effusions",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "large",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 82
   },
   {
    "uid": "fd27c49d945a",
    "img": "img/fd27c49d945a.png",
-   "idx": 83,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lower lung.",
    "disease": "Effusion",
-   "prompt": "a small left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "left"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 83
   },
   {
    "uid": "1c63ba72df44",
    "img": "img/1c63ba72df44.png",
-   "idx": 84,
+   "prompt": "A Chest X-ray semantic mask with severe Consolidation on bilateral lung.",
    "disease": "Consolidation",
-   "prompt": "severe consolidation throughout both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "severe",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "throughout",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "severe",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 84
   },
   {
    "uid": "5b4250d5ded5",
    "img": "img/5b4250d5ded5.png",
-   "idx": 85,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on right lower lung.",
    "disease": "Effusion",
-   "prompt": "a small right pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "right",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "right"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 85
   },
   {
    "uid": "5a6e8d0d6c73",
    "img": "img/5a6e8d0d6c73.png",
-   "idx": 86,
+   "prompt": "A Chest X-ray semantic mask with mild Fibrosis on left lower lung.",
    "disease": "Fibrosis",
-   "prompt": "focal fibrosis in the left lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "focal",
-     "mod"
-    ],
-    [
-     "fibrosis",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "focal",
-   "location_text": "left lung"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 86
   },
   {
    "uid": "f3b137951f30",
    "img": "img/f3b137951f30.png",
-   "idx": 87,
+   "prompt": "A Chest X-ray semantic mask with mild Atelectasis on left lower lung.",
    "disease": "Atelectasis",
-   "prompt": "linear atelectasis in the left lower zone with mediastinal shift to the left",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "linear",
-     "mod"
-    ],
-    [
-     "atelectasis",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left lower zone",
-     "loc"
-    ],
-    [
-     "with mediastinal shift to the left",
-     "plain"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "linear",
-   "location_text": "left lower zone"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 87
   },
   {
    "uid": "e68be88b830a",
    "img": "img/e68be88b830a.png",
-   "idx": 88,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lower lung.",
    "disease": "Effusion",
-   "prompt": "a small left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "left"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 88
   },
   {
    "uid": "df638b10c193",
    "img": "img/df638b10c193.png",
-   "idx": 89,
+   "prompt": "A Chest X-ray semantic mask with mild Fibrosis on left middle lung.",
    "disease": "Fibrosis",
-   "prompt": "focal fibrosis in the left mid zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "focal",
-     "mod"
-    ],
-    [
-     "fibrosis",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left mid zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "focal",
-   "location_text": "left mid zone"
+   "severity": "mild",
+   "location": "left middle lung",
+   "idx": 89
   },
   {
    "uid": "360abe257b64",
    "img": "img/360abe257b64.png",
-   "idx": 90,
+   "prompt": "A Chest X-ray semantic mask with mild Pleural Thickening on left lung.",
    "disease": "Pleural Thickening",
-   "prompt": "extensive left basal pleural thickening",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "extensive",
-     "mod"
-    ],
-    [
-     "left basal",
-     "loc"
-    ],
-    [
-     "pleural thickening",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "extensive",
-   "location_text": "left basal"
+   "severity": "mild",
+   "location": "left lung",
+   "idx": 90
   },
   {
    "uid": "f8a8f3583f26",
    "img": "img/f8a8f3583f26.png",
-   "idx": 91,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lower lung.",
    "disease": "Effusion",
-   "prompt": "a small left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "left"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 91
   },
   {
    "uid": "af4552be5b2c",
    "img": "img/af4552be5b2c.png",
-   "idx": 92,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on right lower lung.",
    "disease": "Effusion",
-   "prompt": "a small right pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "right",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "right"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 92
   },
   {
    "uid": "907bd067e18d",
    "img": "img/907bd067e18d.png",
-   "idx": 93,
+   "prompt": "A Chest X-ray semantic mask with severe Emphysema on bilateral lung.",
    "disease": "Emphysema",
-   "prompt": "emphysema affecting both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "emphysema",
-     "find"
-    ],
-    [
-     "affecting",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 93
   },
   {
    "uid": "c7c90e4010d9",
    "img": "img/c7c90e4010d9.png",
-   "idx": 94,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lower lung.",
    "disease": "Effusion",
-   "prompt": "a small left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "left"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 94
   },
   {
    "uid": "519e83172403",
    "img": "img/519e83172403.png",
-   "idx": 95,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on right lung.",
    "disease": "Consolidation",
-   "prompt": "mild consolidation in the right lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "mild",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "mild",
-   "location_text": "right lung"
+   "severity": "mild",
+   "location": "right lung",
+   "idx": 95
   },
   {
    "uid": "91dbe3dfd73c",
    "img": "img/91dbe3dfd73c.png",
-   "idx": 96,
+   "prompt": "A Chest X-ray semantic mask with mild Pleural Thickening on right lower lung.",
    "disease": "Pleural Thickening",
-   "prompt": "right basal pleural thickening",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "right basal",
-     "loc"
-    ],
-    [
-     "pleural thickening",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right basal"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 96
   },
   {
    "uid": "7de3df77f135",
    "img": "img/7de3df77f135.png",
-   "idx": 97,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on left lung.",
    "disease": "Consolidation",
-   "prompt": "moderate consolidation in the left lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "moderate",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "moderate",
-   "location_text": "left lung"
+   "severity": "mild",
+   "location": "left lung",
+   "idx": 97
   },
   {
    "uid": "e3fcbf097c06",
    "img": "img/e3fcbf097c06.png",
-   "idx": 98,
+   "prompt": "A Chest X-ray semantic mask with mild Pneumothorax on right upper lung.",
    "disease": "Pneumothorax",
-   "prompt": "a small right apical pneumothorax",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "right apical",
-     "loc"
-    ],
-    [
-     "pneumothorax",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "right apical"
+   "severity": "mild",
+   "location": "right upper lung",
+   "idx": 98
   },
   {
    "uid": "fe43decbe47d",
    "img": "img/fe43decbe47d.png",
-   "idx": 99,
+   "prompt": "A Chest X-ray semantic mask with severe Fibrosis on bilateral lung.",
    "disease": "Fibrosis",
-   "prompt": "diffuse fibrosis throughout both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "diffuse",
-     "mod"
-    ],
-    [
-     "fibrosis",
-     "find"
-    ],
-    [
-     "throughout",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "diffuse",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 99
   },
   {
    "uid": "7325151952a9",
    "img": "img/7325151952a9.png",
-   "idx": 100,
-   "disease": "Consolidation",
    "prompt": "A Chest X-ray semantic mask with mild Consolidation on left lower lung.",
-   "prompt_version": "v1",
-   "parts": [
-    [
-     "A Chest X-ray semantic mask with mild Consolidation on left lower lung.",
-     "plain"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ]
+   "disease": "Consolidation",
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 100
   },
   {
    "uid": "e8156fb376f7",
    "img": "img/e8156fb376f7.png",
-   "idx": 101,
+   "prompt": "A Chest X-ray semantic mask with mild Nodule on left lower lung.",
    "disease": "Nodule",
-   "prompt": "multiple nodules in both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "multiple nodules",
-     "find"
-    ],
-    [
-     "in",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "bilateral"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 101
   },
   {
    "uid": "5055ab638af6",
    "img": "img/5055ab638af6.png",
-   "idx": 102,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lower lung.",
    "disease": "Effusion",
-   "prompt": "a small left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "left"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 102
   },
   {
    "uid": "eff4b7e28e79",
    "img": "img/eff4b7e28e79.png",
-   "idx": 103,
+   "prompt": "A Chest X-ray semantic mask with mild Nodule on right middle lung.",
    "disease": "Nodule",
-   "prompt": "a nodule in the right lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "nodule",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right lung"
+   "severity": "mild",
+   "location": "right middle lung",
+   "idx": 103
   },
   {
    "uid": "b556b25eb199",
    "img": "img/b556b25eb199.png",
-   "idx": 104,
+   "prompt": "A Chest X-ray semantic mask with mild Mass on right lower lung.",
    "disease": "Mass",
-   "prompt": "a mass in the right lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "mass",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right lung"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 104
   },
   {
    "uid": "3067050a1fe0",
    "img": "img/3067050a1fe0.png",
-   "idx": 105,
+   "prompt": "A Chest X-ray semantic mask with severe Fibrosis on bilateral lung.",
    "disease": "Fibrosis",
-   "prompt": "focal fibrosis in both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "focal",
-     "mod"
-    ],
-    [
-     "fibrosis",
-     "find"
-    ],
-    [
-     "in",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "focal",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 105
   },
   {
    "uid": "144e48e060f6",
    "img": "img/144e48e060f6.png",
-   "idx": 106,
+   "prompt": "A Chest X-ray semantic mask with mild Pleural Thickening on right lower lung.",
    "disease": "Pleural Thickening",
-   "prompt": "right apical pleural thickening",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "right apical",
-     "loc"
-    ],
-    [
-     "pleural thickening",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right apical"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 106
   },
   {
    "uid": "5b07b459e618",
    "img": "img/5b07b459e618.png",
-   "idx": 107,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on right lung.",
    "disease": "Effusion",
-   "prompt": "a small right pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "right",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "right"
+   "severity": "mild",
+   "location": "right lung",
+   "idx": 107
   },
   {
    "uid": "268bb2b2cd16",
    "img": "img/268bb2b2cd16.png",
-   "idx": 108,
+   "prompt": "A Chest X-ray semantic mask with mild Fibrosis on left middle lung.",
    "disease": "Fibrosis",
-   "prompt": "focal fibrosis in the left mid zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "focal",
-     "mod"
-    ],
-    [
-     "fibrosis",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left mid zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "focal",
-   "location_text": "left mid zone"
+   "severity": "mild",
+   "location": "left middle lung",
+   "idx": 108
   },
   {
    "uid": "8c8433f3cf96",
    "img": "img/8c8433f3cf96.png",
-   "idx": 109,
+   "prompt": "A Chest X-ray semantic mask with severe Consolidation on bilateral lung.",
    "disease": "Consolidation",
-   "prompt": "severe consolidation throughout both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "severe",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "throughout",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "severe",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 109
   },
   {
    "uid": "88f1a07ea043",
    "img": "img/88f1a07ea043.png",
-   "idx": 110,
+   "prompt": "A Chest X-ray semantic mask with moderate Consolidation on bilateral lung.",
    "disease": "Consolidation",
-   "prompt": "severe consolidation in the right lower zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "severe",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lower zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "severe",
-   "location_text": "right lower zone"
+   "severity": "moderate",
+   "location": "bilateral lung",
+   "idx": 110
   },
   {
    "uid": "219f71b89a34",
    "img": "img/219f71b89a34.png",
-   "idx": 111,
+   "prompt": "A Chest X-ray semantic mask with severe Cardiomegaly on heart.",
    "disease": "Cardiomegaly",
-   "prompt": "marked cardiomegaly",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "marked",
-     "mod"
-    ],
-    [
-     "cardiomegaly",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "severity"
-   ],
-   "modifier": "marked",
-   "location_text": "cardiac silhouette"
+   "severity": "severe",
+   "location": "heart",
+   "idx": 111
   },
   {
    "uid": "45c8230cd959",
    "img": "img/45c8230cd959.png",
-   "idx": 112,
+   "prompt": "A Chest X-ray semantic mask with mild Nodule on right lower lung.",
    "disease": "Nodule",
-   "prompt": "multiple nodules in the right lower zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "multiple nodules",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lower zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right lower zone"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 112
   },
   {
    "uid": "1b1bd67670ba",
    "img": "img/1b1bd67670ba.png",
-   "idx": 113,
+   "prompt": "A Chest X-ray semantic mask with severe Consolidation on bilateral lung.",
    "disease": "Consolidation",
-   "prompt": "severe consolidation throughout both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "severe",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "throughout",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "severe",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 113
   },
   {
    "uid": "75f1e21501ff",
    "img": "img/75f1e21501ff.png",
-   "idx": 114,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on bilateral lung.",
    "disease": "Consolidation",
-   "prompt": "moderate consolidation in the right lower zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "moderate",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lower zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "moderate",
-   "location_text": "right lower zone"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 114
   },
   {
    "uid": "d0303197ee9f",
    "img": "img/d0303197ee9f.png",
-   "idx": 115,
+   "prompt": "A Chest X-ray semantic mask with mild Fibrosis on right upper lung.",
    "disease": "Fibrosis",
-   "prompt": "focal fibrosis in the right upper zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "focal",
-     "mod"
-    ],
-    [
-     "fibrosis",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right upper zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "focal",
-   "location_text": "right upper zone"
+   "severity": "mild",
+   "location": "right upper lung",
+   "idx": 115
   },
   {
    "uid": "f90f1daabb30",
    "img": "img/f90f1daabb30.png",
-   "idx": 116,
+   "prompt": "A Chest X-ray semantic mask with mild Pleural Thickening on right lower lung.",
    "disease": "Pleural Thickening",
-   "prompt": "right basal pleural thickening",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "right basal",
-     "loc"
-    ],
-    [
-     "pleural thickening",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right basal"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 116
   },
   {
    "uid": "68d047c8e70b",
    "img": "img/68d047c8e70b.png",
-   "idx": 117,
+   "prompt": "A Chest X-ray semantic mask with severe Cardiomegaly on heart.",
    "disease": "Cardiomegaly",
-   "prompt": "marked cardiomegaly",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "marked",
-     "mod"
-    ],
-    [
-     "cardiomegaly",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "severity"
-   ],
-   "modifier": "marked",
-   "location_text": "cardiac silhouette"
+   "severity": "severe",
+   "location": "heart",
+   "idx": 117
   },
   {
    "uid": "242567d38f1a",
    "img": "img/242567d38f1a.png",
-   "idx": 118,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lower lung.",
    "disease": "Effusion",
-   "prompt": "a small left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "left"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 118
   },
   {
    "uid": "7378749815fc",
    "img": "img/7378749815fc.png",
-   "idx": 119,
+   "prompt": "A Chest X-ray semantic mask with severe Diffuse Nodule on bilateral lung.",
    "disease": "Diffuse Nodule",
-   "prompt": "diffuse nodularity throughout both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "diffuse nodularity",
-     "find"
-    ],
-    [
-     "throughout",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 119
   },
   {
    "uid": "30bd736e7a3c",
    "img": "img/30bd736e7a3c.png",
-   "idx": 120,
+   "prompt": "A Chest X-ray semantic mask with mild Fibrosis on right upper lung.",
    "disease": "Fibrosis",
-   "prompt": "focal fibrosis in the right upper zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "focal",
-     "mod"
-    ],
-    [
-     "fibrosis",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right upper zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "focal",
-   "location_text": "right upper zone"
+   "severity": "mild",
+   "location": "right upper lung",
+   "idx": 120
   },
   {
    "uid": "0c25e874f028",
    "img": "img/0c25e874f028.png",
-   "idx": 121,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lower lung.",
    "disease": "Effusion",
-   "prompt": "a small left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "left"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 121
   },
   {
    "uid": "83ebb667415c",
    "img": "img/83ebb667415c.png",
-   "idx": 122,
+   "prompt": "A Chest X-ray semantic mask with mild Fracture on left upper lung.",
    "disease": "Fracture",
-   "prompt": "a fracture of the left lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "fracture",
-     "find"
-    ],
-    [
-     "of the",
-     "plain"
-    ],
-    [
-     "left lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "left lung"
+   "severity": "mild",
+   "location": "left upper lung",
+   "idx": 122
   },
   {
    "uid": "9e2ed747321c",
    "img": "img/9e2ed747321c.png",
-   "idx": 123,
+   "prompt": "A Chest X-ray semantic mask with severe Effusion on bilateral lung.",
    "disease": "Effusion",
-   "prompt": "large bilateral pleural effusions",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "large",
-     "mod"
-    ],
-    [
-     "bilateral",
-     "loc"
-    ],
-    [
-     "pleural effusions",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "large",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 123
   },
   {
    "uid": "5e356fc60875",
    "img": "img/5e356fc60875.png",
-   "idx": 124,
+   "prompt": "A Chest X-ray semantic mask with severe Fibrosis on bilateral lung.",
    "disease": "Fibrosis",
-   "prompt": "diffuse fibrosis throughout both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "diffuse",
-     "mod"
-    ],
-    [
-     "fibrosis",
-     "find"
-    ],
-    [
-     "throughout",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "diffuse",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 124
   },
   {
    "uid": "46ef9f93ef74",
    "img": "img/46ef9f93ef74.png",
-   "idx": 125,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on left lung.",
    "disease": "Consolidation",
-   "prompt": "mild consolidation in the left lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "mild",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "mild",
-   "location_text": "left lung"
+   "severity": "mild",
+   "location": "left lung",
+   "idx": 125
   },
   {
    "uid": "37648575f4f0",
    "img": "img/37648575f4f0.png",
-   "idx": 126,
+   "prompt": "A Chest X-ray semantic mask with mild Pleural Thickening on right lower lung.",
    "disease": "Pleural Thickening",
-   "prompt": "right apical pleural thickening",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "right apical",
-     "loc"
-    ],
-    [
-     "pleural thickening",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right apical"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 126
   },
   {
    "uid": "4f0bb9a8c06a",
    "img": "img/4f0bb9a8c06a.png",
-   "idx": 127,
+   "prompt": "A Chest X-ray semantic mask with moderate Consolidation on right lung.",
    "disease": "Consolidation",
-   "prompt": "moderate consolidation in the right lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "moderate",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "moderate",
-   "location_text": "right lung"
+   "severity": "moderate",
+   "location": "right lung",
+   "idx": 127
   },
   {
    "uid": "e68fae27e073",
    "img": "img/e68fae27e073.png",
-   "idx": 128,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on left lung.",
    "disease": "Consolidation",
-   "prompt": "mild consolidation in the left lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "mild",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "mild",
-   "location_text": "left lung"
+   "severity": "mild",
+   "location": "left lung",
+   "idx": 128
   },
   {
    "uid": "cdc95496a58a",
    "img": "img/cdc95496a58a.png",
-   "idx": 129,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on right lower lung.",
    "disease": "Consolidation",
-   "prompt": "mild consolidation in the right lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "mild",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "mild",
-   "location_text": "right lung"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 129
   },
   {
    "uid": "2b615fb7eaca",
    "img": "img/2b615fb7eaca.png",
-   "idx": 130,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on bilateral lung.",
    "disease": "Consolidation",
-   "prompt": "mild consolidation in the left upper zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "mild",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left upper zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "mild",
-   "location_text": "left upper zone"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 130
   },
   {
    "uid": "dd44f6de0378",
    "img": "img/dd44f6de0378.png",
-   "idx": 131,
+   "prompt": "A Chest X-ray semantic mask with severe Emphysema on bilateral lung.",
    "disease": "Emphysema",
-   "prompt": "emphysema affecting both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "emphysema",
-     "find"
-    ],
-    [
-     "affecting",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 131
   },
   {
    "uid": "ec1780f83082",
    "img": "img/ec1780f83082.png",
-   "idx": 132,
+   "prompt": "A Chest X-ray semantic mask with mild Fracture on right middle lung.",
    "disease": "Fracture",
-   "prompt": "a fracture of the right upper ribs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "fracture",
-     "find"
-    ],
-    [
-     "of the",
-     "plain"
-    ],
-    [
-     "right upper ribs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right upper ribs"
+   "severity": "mild",
+   "location": "right middle lung",
+   "idx": 132
   },
   {
    "uid": "3787b6c978b2",
    "img": "img/3787b6c978b2.png",
-   "idx": 133,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on bilateral lung.",
    "disease": "Effusion",
-   "prompt": "small bilateral pleural effusions",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "bilateral",
-     "loc"
-    ],
-    [
-     "pleural effusions",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "bilateral"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 133
   },
   {
    "uid": "64aea4aec6d1",
    "img": "img/64aea4aec6d1.png",
-   "idx": 134,
+   "prompt": "A Chest X-ray semantic mask with mild Nodule on right middle lung.",
    "disease": "Nodule",
-   "prompt": "a nodule in the right lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "nodule",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right lung"
+   "severity": "mild",
+   "location": "right middle lung",
+   "idx": 134
   },
   {
    "uid": "6272d6701d41",
    "img": "img/6272d6701d41.png",
-   "idx": 135,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lower lung.",
    "disease": "Effusion",
-   "prompt": "a large left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "large",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "large",
-   "location_text": "left"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 135
   },
   {
    "uid": "c1ac487ffdb5",
    "img": "img/c1ac487ffdb5.png",
-   "idx": 136,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lower lung.",
    "disease": "Effusion",
-   "prompt": "a small left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "left"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 136
   },
   {
    "uid": "5657fe3654b8",
    "img": "img/5657fe3654b8.png",
-   "idx": 137,
+   "prompt": "A Chest X-ray semantic mask with severe Consolidation on bilateral lung.",
    "disease": "Consolidation",
-   "prompt": "severe consolidation throughout both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "severe",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "throughout",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "severe",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 137
   },
   {
    "uid": "463115951be4",
    "img": "img/463115951be4.png",
-   "idx": 138,
+   "prompt": "A Chest X-ray semantic mask with severe Diffuse Nodule on bilateral lung.",
    "disease": "Diffuse Nodule",
-   "prompt": "diffuse nodularity throughout both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "diffuse nodularity",
-     "find"
-    ],
-    [
-     "throughout",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 138
   },
   {
    "uid": "e13e364fa7a0",
    "img": "img/e13e364fa7a0.png",
-   "idx": 139,
+   "prompt": "A Chest X-ray semantic mask with mild Atelectasis on right lower lung.",
    "disease": "Atelectasis",
-   "prompt": "linear atelectasis in the right lower zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "linear",
-     "mod"
-    ],
-    [
-     "atelectasis",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lower zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "linear",
-   "location_text": "right lower zone"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 139
   },
   {
    "uid": "d1a228a38e3a",
    "img": "img/d1a228a38e3a.png",
-   "idx": 140,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on right upper lung.",
    "disease": "Consolidation",
-   "prompt": "mild consolidation in the right upper zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "mild",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right upper zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "mild",
-   "location_text": "right upper zone"
+   "severity": "mild",
+   "location": "right upper lung",
+   "idx": 140
   },
   {
    "uid": "038e01454fb0",
    "img": "img/038e01454fb0.png",
-   "idx": 141,
+   "prompt": "A Chest X-ray semantic mask with mild Fibrosis on left lower lung.",
    "disease": "Fibrosis",
-   "prompt": "focal fibrosis in the left lower zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "focal",
-     "mod"
-    ],
-    [
-     "fibrosis",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left lower zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "focal",
-   "location_text": "left lower zone"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 141
   },
   {
    "uid": "53ca67c8a923",
    "img": "img/53ca67c8a923.png",
-   "idx": 142,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on bilateral lung.",
    "disease": "Consolidation",
-   "prompt": "moderate consolidation in the right lower zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "moderate",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lower zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "moderate",
-   "location_text": "right lower zone"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 142
   },
   {
    "uid": "05feccd09093",
    "img": "img/05feccd09093.png",
-   "idx": 143,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lower lung.",
    "disease": "Effusion",
-   "prompt": "small bilateral pleural effusions",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "bilateral",
-     "loc"
-    ],
-    [
-     "pleural effusions",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "bilateral"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 143
   },
   {
    "uid": "0ba050985822",
    "img": "img/0ba050985822.png",
-   "idx": 144,
+   "prompt": "A Chest X-ray semantic mask with moderate Cardiomegaly on heart.",
    "disease": "Cardiomegaly",
-   "prompt": "cardiomegaly",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "cardiomegaly",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy"
-   ],
-   "modifier": "",
-   "location_text": "cardiac silhouette"
+   "severity": "moderate",
+   "location": "heart",
+   "idx": 144
   },
   {
    "uid": "057d6592454d",
    "img": "img/057d6592454d.png",
-   "idx": 145,
+   "prompt": "A Chest X-ray semantic mask with moderate Effusion on left lung.",
    "disease": "Effusion",
-   "prompt": "a large left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "large",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "large",
-   "location_text": "left"
+   "severity": "moderate",
+   "location": "left lung",
+   "idx": 145
   },
   {
    "uid": "05bd530fbfab",
    "img": "img/05bd530fbfab.png",
-   "idx": 146,
+   "prompt": "A Chest X-ray semantic mask with moderate Fibrosis on left lung.",
    "disease": "Fibrosis",
-   "prompt": "diffuse fibrosis throughout both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "diffuse",
-     "mod"
-    ],
-    [
-     "fibrosis",
-     "find"
-    ],
-    [
-     "throughout",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "diffuse",
-   "location_text": "bilateral"
+   "severity": "moderate",
+   "location": "left lung",
+   "idx": 146
   },
   {
    "uid": "263b9f4748ad",
    "img": "img/263b9f4748ad.png",
-   "idx": 147,
+   "prompt": "A Chest X-ray semantic mask with mild Atelectasis on left lower lung.",
    "disease": "Atelectasis",
-   "prompt": "linear atelectasis in the left lower zone with mediastinal shift to the left",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "linear",
-     "mod"
-    ],
-    [
-     "atelectasis",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left lower zone",
-     "loc"
-    ],
-    [
-     "with mediastinal shift to the left",
-     "plain"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "linear",
-   "location_text": "left lower zone"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 147
   },
   {
    "uid": "ed27c93097b1",
    "img": "img/ed27c93097b1.png",
-   "idx": 148,
+   "prompt": "A Chest X-ray semantic mask with mild Pneumothorax on right lower lung.",
    "disease": "Pneumothorax",
-   "prompt": "a small right basal pneumothorax",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "right basal",
-     "loc"
-    ],
-    [
-     "pneumothorax",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "right basal"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 148
   },
   {
    "uid": "1726220f523c",
    "img": "img/1726220f523c.png",
-   "idx": 149,
+   "prompt": "A Chest X-ray semantic mask with mild Fracture on right upper lung.",
    "disease": "Fracture",
-   "prompt": "a fracture of the right upper ribs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "fracture",
-     "find"
-    ],
-    [
-     "of the",
-     "plain"
-    ],
-    [
-     "right upper ribs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right upper ribs"
+   "severity": "mild",
+   "location": "right upper lung",
+   "idx": 149
   },
   {
    "uid": "a410937c3e64",
    "img": "img/a410937c3e64.png",
-   "idx": 150,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on right upper lung.",
    "disease": "Consolidation",
-   "prompt": "mild consolidation in the right upper zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "mild",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right upper zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "mild",
-   "location_text": "right upper zone"
+   "severity": "mild",
+   "location": "right upper lung",
+   "idx": 150
   },
   {
    "uid": "7483f614817d",
    "img": "img/7483f614817d.png",
-   "idx": 151,
+   "prompt": "A Chest X-ray semantic mask with mild Pneumothorax on right upper lung.",
    "disease": "Pneumothorax",
-   "prompt": "a small right apical pneumothorax",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "right apical",
-     "loc"
-    ],
-    [
-     "pneumothorax",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "right apical"
+   "severity": "mild",
+   "location": "right upper lung",
+   "idx": 151
   },
   {
    "uid": "6f103151ef19",
    "img": "img/6f103151ef19.png",
-   "idx": 152,
+   "prompt": "A Chest X-ray semantic mask with mild Nodule on right lower lung.",
    "disease": "Nodule",
-   "prompt": "multiple nodules in the right lower zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "multiple nodules",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lower zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right lower zone"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 152
   },
   {
    "uid": "ac1f154e89f9",
    "img": "img/ac1f154e89f9.png",
-   "idx": 153,
+   "prompt": "A Chest X-ray semantic mask with mild Pneumothorax on right upper lung.",
    "disease": "Pneumothorax",
-   "prompt": "a small right apical pneumothorax",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "right apical",
-     "loc"
-    ],
-    [
-     "pneumothorax",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "right apical"
+   "severity": "mild",
+   "location": "right upper lung",
+   "idx": 153
   },
   {
    "uid": "8b5f063b635b",
    "img": "img/8b5f063b635b.png",
-   "idx": 154,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on bilateral lung.",
    "disease": "Consolidation",
-   "prompt": "mild consolidation in the left upper zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "mild",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left upper zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "mild",
-   "location_text": "left upper zone"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 154
   },
   {
    "uid": "a1776051a936",
    "img": "img/a1776051a936.png",
-   "idx": 155,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on bilateral lung.",
    "disease": "Effusion",
-   "prompt": "small bilateral pleural effusions",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "bilateral",
-     "loc"
-    ],
-    [
-     "pleural effusions",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "bilateral"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 155
   },
   {
    "uid": "655b6b866230",
    "img": "img/655b6b866230.png",
-   "idx": 156,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on bilateral lung.",
    "disease": "Consolidation",
-   "prompt": "moderate consolidation in the right lower zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "moderate",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lower zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "moderate",
-   "location_text": "right lower zone"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 156
   },
   {
    "uid": "fd12754a685d",
    "img": "img/fd12754a685d.png",
-   "idx": 157,
+   "prompt": "A Chest X-ray semantic mask with mild Nodule on bilateral lung.",
    "disease": "Nodule",
-   "prompt": "multiple nodules in both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "multiple nodules",
-     "find"
-    ],
-    [
-     "in",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "bilateral"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 157
   },
   {
    "uid": "7d26a148a12e",
    "img": "img/7d26a148a12e.png",
-   "idx": 158,
-   "disease": "Consolidation",
    "prompt": "A Chest X-ray semantic mask with mild Consolidation on left lower lung.",
-   "prompt_version": "v1",
-   "parts": [
-    [
-     "A Chest X-ray semantic mask with mild Consolidation on left lower lung.",
-     "plain"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ]
+   "disease": "Consolidation",
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 158
   },
   {
    "uid": "de12dab36924",
    "img": "img/de12dab36924.png",
-   "idx": 159,
+   "prompt": "A Chest X-ray semantic mask with severe Effusion on bilateral lung.",
    "disease": "Effusion",
-   "prompt": "large bilateral pleural effusions",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "large",
-     "mod"
-    ],
-    [
-     "bilateral",
-     "loc"
-    ],
-    [
-     "pleural effusions",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "large",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 159
   },
   {
    "uid": "763252d3c870",
    "img": "img/763252d3c870.png",
-   "idx": 160,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on right lung.",
    "disease": "Consolidation",
-   "prompt": "mild consolidation in the right lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "mild",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "mild",
-   "location_text": "right lung"
+   "severity": "mild",
+   "location": "right lung",
+   "idx": 160
   },
   {
    "uid": "9bd6b85f9d4e",
    "img": "img/9bd6b85f9d4e.png",
-   "idx": 161,
+   "prompt": "A Chest X-ray semantic mask with mild Pleural Thickening on right lower lung.",
    "disease": "Pleural Thickening",
-   "prompt": "extensive right basal pleural thickening",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "extensive",
-     "mod"
-    ],
-    [
-     "right basal",
-     "loc"
-    ],
-    [
-     "pleural thickening",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "extensive",
-   "location_text": "right basal"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 161
   },
   {
    "uid": "7e776d3443e1",
    "img": "img/7e776d3443e1.png",
-   "idx": 162,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lower lung.",
    "disease": "Effusion",
-   "prompt": "a small left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "left"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 162
   },
   {
    "uid": "d3fee036df1e",
    "img": "img/d3fee036df1e.png",
-   "idx": 163,
+   "prompt": "A Chest X-ray semantic mask with moderate Cardiomegaly on heart.",
    "disease": "Cardiomegaly",
-   "prompt": "cardiomegaly",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "cardiomegaly",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy"
-   ],
-   "modifier": "",
-   "location_text": "cardiac silhouette"
+   "severity": "moderate",
+   "location": "heart",
+   "idx": 163
   },
   {
    "uid": "053cd56172f7",
    "img": "img/053cd56172f7.png",
-   "idx": 164,
+   "prompt": "A Chest X-ray semantic mask with severe Consolidation on bilateral lung.",
    "disease": "Consolidation",
-   "prompt": "moderate consolidation in both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "moderate",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "moderate",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 164
   },
   {
    "uid": "ccbcd3504d9b",
    "img": "img/ccbcd3504d9b.png",
-   "idx": 165,
+   "prompt": "A Chest X-ray semantic mask with moderate Consolidation on left lung.",
    "disease": "Consolidation",
-   "prompt": "severe consolidation throughout the left lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "severe",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "throughout the",
-     "plain"
-    ],
-    [
-     "left lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "severe",
-   "location_text": "left throughout"
+   "severity": "moderate",
+   "location": "left lung",
+   "idx": 165
   },
   {
    "uid": "ea1fdd92495f",
    "img": "img/ea1fdd92495f.png",
-   "idx": 166,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lower lung.",
    "disease": "Effusion",
-   "prompt": "a small left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "left"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 166
   },
   {
    "uid": "533ac0681b78",
    "img": "img/533ac0681b78.png",
-   "idx": 167,
+   "prompt": "A Chest X-ray semantic mask with moderate Cardiomegaly on heart.",
    "disease": "Cardiomegaly",
-   "prompt": "cardiomegaly",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "cardiomegaly",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy"
-   ],
-   "modifier": "",
-   "location_text": "cardiac silhouette"
+   "severity": "moderate",
+   "location": "heart",
+   "idx": 167
   },
   {
    "uid": "d52cccc4f646",
    "img": "img/d52cccc4f646.png",
-   "idx": 168,
+   "prompt": "A Chest X-ray semantic mask with severe Emphysema on bilateral lung.",
    "disease": "Emphysema",
-   "prompt": "emphysema affecting both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "emphysema",
-     "find"
-    ],
-    [
-     "affecting",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 168
   },
   {
    "uid": "44034b3a7230",
    "img": "img/44034b3a7230.png",
-   "idx": 169,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on bilateral lung.",
    "disease": "Effusion",
-   "prompt": "small bilateral pleural effusions",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "bilateral",
-     "loc"
-    ],
-    [
-     "pleural effusions",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "bilateral"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 169
   },
   {
    "uid": "a7465933b535",
    "img": "img/a7465933b535.png",
-   "idx": 170,
-   "disease": "Calcification",
    "prompt": "A Chest X-ray semantic mask with mild Calcification on right lung.",
-   "prompt_version": "v1",
-   "parts": [
-    [
-     "A Chest X-ray semantic mask with mild Calcification on right lung.",
-     "plain"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ]
+   "disease": "Calcification",
+   "severity": "mild",
+   "location": "right lung",
+   "idx": 170
   },
   {
    "uid": "4d3d0b369de9",
    "img": "img/4d3d0b369de9.png",
-   "idx": 171,
+   "prompt": "A Chest X-ray semantic mask with mild Pleural Thickening on right lower lung.",
    "disease": "Pleural Thickening",
-   "prompt": "extensive right basal pleural thickening",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "extensive",
-     "mod"
-    ],
-    [
-     "right basal",
-     "loc"
-    ],
-    [
-     "pleural thickening",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "extensive",
-   "location_text": "right basal"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 171
   },
   {
    "uid": "753126df85fa",
    "img": "img/753126df85fa.png",
-   "idx": 172,
+   "prompt": "A Chest X-ray semantic mask with severe Effusion on bilateral lung.",
    "disease": "Effusion",
-   "prompt": "large bilateral pleural effusions",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "large",
-     "mod"
-    ],
-    [
-     "bilateral",
-     "loc"
-    ],
-    [
-     "pleural effusions",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "large",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 172
   },
   {
    "uid": "25a97d3c70a0",
    "img": "img/25a97d3c70a0.png",
-   "idx": 173,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on right lower lung.",
    "disease": "Consolidation",
-   "prompt": "mild consolidation in the right lower zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "mild",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lower zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "mild",
-   "location_text": "right lower zone"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 173
   },
   {
    "uid": "02f3147440b3",
    "img": "img/02f3147440b3.png",
-   "idx": 174,
+   "prompt": "A Chest X-ray semantic mask with mild Pleural Thickening on left lower lung.",
    "disease": "Pleural Thickening",
-   "prompt": "left basal pleural thickening",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "left basal",
-     "loc"
-    ],
-    [
-     "pleural thickening",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "left basal"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 174
   },
   {
    "uid": "c1bca70d2acb",
    "img": "img/c1bca70d2acb.png",
-   "idx": 175,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on right lower lung.",
    "disease": "Effusion",
-   "prompt": "a small right pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "right",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "right"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 175
   },
   {
    "uid": "dc154b640aab",
    "img": "img/dc154b640aab.png",
-   "idx": 176,
+   "prompt": "A Chest X-ray semantic mask with severe Consolidation on bilateral lung.",
    "disease": "Consolidation",
-   "prompt": "severe consolidation throughout both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "severe",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "throughout",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "severe",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 176
   },
   {
    "uid": "696af945dd2d",
    "img": "img/696af945dd2d.png",
-   "idx": 177,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lower lung.",
    "disease": "Effusion",
-   "prompt": "a small left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "left"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 177
   },
   {
    "uid": "2131f7400967",
    "img": "img/2131f7400967.png",
-   "idx": 178,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on left lower lung.",
    "disease": "Consolidation",
-   "prompt": "mild consolidation in the retrocardiac region",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "mild",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "retrocardiac region",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "mild",
-   "location_text": "retrocardiac"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 178
   },
   {
    "uid": "f163d1fc1f01",
    "img": "img/f163d1fc1f01.png",
-   "idx": 179,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lower lung.",
    "disease": "Effusion",
-   "prompt": "a large left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "large",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "large",
-   "location_text": "left"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 179
   },
   {
    "uid": "8323be3f4b3e",
    "img": "img/8323be3f4b3e.png",
-   "idx": 180,
+   "prompt": "A Chest X-ray semantic mask with mild Fracture on left upper lung.",
    "disease": "Fracture",
-   "prompt": "a fracture of the left lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "fracture",
-     "find"
-    ],
-    [
-     "of the",
-     "plain"
-    ],
-    [
-     "left lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "left lung"
+   "severity": "mild",
+   "location": "left upper lung",
+   "idx": 180
   },
   {
    "uid": "b7a1eb2c55ce",
    "img": "img/b7a1eb2c55ce.png",
-   "idx": 181,
+   "prompt": "A Chest X-ray semantic mask with mild Atelectasis on right lower lung.",
    "disease": "Atelectasis",
-   "prompt": "segmental atelectasis in the right lung with mediastinal shift to the left",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "segmental",
-     "mod"
-    ],
-    [
-     "atelectasis",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lung",
-     "loc"
-    ],
-    [
-     "with mediastinal shift to the left",
-     "plain"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "segmental",
-   "location_text": "right lung"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 181
   },
   {
    "uid": "06309d2008da",
    "img": "img/06309d2008da.png",
-   "idx": 182,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on left lower lung.",
    "disease": "Consolidation",
-   "prompt": "mild consolidation in the retrocardiac region",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "mild",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "retrocardiac region",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "mild",
-   "location_text": "retrocardiac"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 182
   },
   {
    "uid": "122864b1e549",
    "img": "img/122864b1e549.png",
-   "idx": 183,
+   "prompt": "A Chest X-ray semantic mask with moderate Cardiomegaly on heart.",
    "disease": "Cardiomegaly",
-   "prompt": "cardiomegaly",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "cardiomegaly",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy"
-   ],
-   "modifier": "",
-   "location_text": "cardiac silhouette"
+   "severity": "moderate",
+   "location": "heart",
+   "idx": 183
   },
   {
    "uid": "c2f732caf259",
    "img": "img/c2f732caf259.png",
-   "idx": 184,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on left lower lung.",
    "disease": "Consolidation",
-   "prompt": "moderate consolidation in the left lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "moderate",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "moderate",
-   "location_text": "left lung"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 184
   },
   {
    "uid": "3976a3a8fd38",
    "img": "img/3976a3a8fd38.png",
-   "idx": 185,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on right lower lung.",
    "disease": "Consolidation",
-   "prompt": "mild consolidation in the right lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "mild",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "mild",
-   "location_text": "right lung"
+   "severity": "mild",
+   "location": "right lower lung",
+   "idx": 185
   },
   {
    "uid": "b99ae597dedc",
    "img": "img/b99ae597dedc.png",
-   "idx": 186,
+   "prompt": "A Chest X-ray semantic mask with mild Fracture on right middle lung.",
    "disease": "Fracture",
-   "prompt": "a fracture of the right upper ribs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "fracture",
-     "find"
-    ],
-    [
-     "of the",
-     "plain"
-    ],
-    [
-     "right upper ribs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right upper ribs"
+   "severity": "mild",
+   "location": "right middle lung",
+   "idx": 186
   },
   {
    "uid": "4998cd869296",
    "img": "img/4998cd869296.png",
-   "idx": 187,
+   "prompt": "A Chest X-ray semantic mask with severe Fibrosis on bilateral lung.",
    "disease": "Fibrosis",
-   "prompt": "diffuse fibrosis throughout both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "diffuse",
-     "mod"
-    ],
-    [
-     "fibrosis",
-     "find"
-    ],
-    [
-     "throughout",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "diffuse",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 187
   },
   {
    "uid": "c53829717df9",
    "img": "img/c53829717df9.png",
-   "idx": 188,
+   "prompt": "A Chest X-ray semantic mask with severe Consolidation on bilateral lung.",
    "disease": "Consolidation",
-   "prompt": "moderate consolidation in both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "moderate",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "moderate",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 188
   },
   {
    "uid": "30bd628500ac",
    "img": "img/30bd628500ac.png",
-   "idx": 189,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on heart.",
    "disease": "Consolidation",
-   "prompt": "mild consolidation in the retrocardiac region",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "mild",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "retrocardiac region",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "mild",
-   "location_text": "retrocardiac"
+   "severity": "mild",
+   "location": "heart",
+   "idx": 189
   },
   {
    "uid": "c3c7cc55fcb9",
    "img": "img/c3c7cc55fcb9.png",
-   "idx": 190,
+   "prompt": "A Chest X-ray semantic mask with mild Nodule on left middle lung.",
    "disease": "Nodule",
-   "prompt": "a nodule in the left mid zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "nodule",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left mid zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "left mid zone"
+   "severity": "mild",
+   "location": "left middle lung",
+   "idx": 190
   },
   {
    "uid": "c26c54904348",
    "img": "img/c26c54904348.png",
-   "idx": 191,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on left lower lung.",
    "disease": "Consolidation",
-   "prompt": "mild consolidation in the retrocardiac region",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "mild",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "retrocardiac region",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "mild",
-   "location_text": "retrocardiac"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 191
   },
   {
    "uid": "126f4c5cf1a0",
    "img": "img/126f4c5cf1a0.png",
-   "idx": 192,
+   "prompt": "A Chest X-ray semantic mask with mild Effusion on left lower lung.",
    "disease": "Effusion",
-   "prompt": "a small left pleural effusion",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "small",
-     "mod"
-    ],
-    [
-     "left",
-     "loc"
-    ],
-    [
-     "pleural effusion",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "small",
-   "location_text": "left"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 192
   },
   {
    "uid": "45cb63d47855",
    "img": "img/45cb63d47855.png",
-   "idx": 193,
+   "prompt": "A Chest X-ray semantic mask with severe Emphysema on bilateral lung.",
    "disease": "Emphysema",
-   "prompt": "emphysema affecting both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "emphysema",
-     "find"
-    ],
-    [
-     "affecting",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "bilateral"
+   "severity": "severe",
+   "location": "bilateral lung",
+   "idx": 193
   },
   {
    "uid": "9e5046781bb8",
    "img": "img/9e5046781bb8.png",
-   "idx": 194,
+   "prompt": "A Chest X-ray semantic mask with mild Mass on bilateral lung.",
    "disease": "Mass",
-   "prompt": "multiple masss in both lungs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "multiple masss",
-     "find"
-    ],
-    [
-     "in",
-     "plain"
-    ],
-    [
-     "both lungs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "bilateral"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 194
   },
   {
    "uid": "409697850150",
    "img": "img/409697850150.png",
-   "idx": 195,
+   "prompt": "A Chest X-ray semantic mask with mild Fracture on right middle lung.",
    "disease": "Fracture",
-   "prompt": "a fracture of the right upper ribs",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "a",
-     "plain"
-    ],
-    [
-     "fracture",
-     "find"
-    ],
-    [
-     "of the",
-     "plain"
-    ],
-    [
-     "right upper ribs",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "right upper ribs"
+   "severity": "mild",
+   "location": "right middle lung",
+   "idx": 195
   },
   {
    "uid": "af7c10e87e4d",
    "img": "img/af7c10e87e4d.png",
-   "idx": 196,
+   "prompt": "A Chest X-ray semantic mask with mild Pleural Thickening on left lower lung.",
    "disease": "Pleural Thickening",
-   "prompt": "left basal pleural thickening",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "left basal",
-     "loc"
-    ],
-    [
-     "pleural thickening",
-     "find"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "left basal"
+   "severity": "mild",
+   "location": "left lower lung",
+   "idx": 196
   },
   {
    "uid": "930b72d7ff32",
    "img": "img/930b72d7ff32.png",
-   "idx": 197,
+   "prompt": "A Chest X-ray semantic mask with mild Calcification on left middle lung.",
    "disease": "Calcification",
-   "prompt": "calcified foci in the left lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "calcified foci",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "left lung"
+   "severity": "mild",
+   "location": "left middle lung",
+   "idx": 197
   },
   {
    "uid": "6fa99bd49ba3",
    "img": "img/6fa99bd49ba3.png",
-   "idx": 198,
+   "prompt": "A Chest X-ray semantic mask with severe Diffuse Nodule on left lung.",
    "disease": "Diffuse Nodule",
-   "prompt": "multiple nodules in the left lung",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "multiple nodules",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "left lung",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location"
-   ],
-   "modifier": "",
-   "location_text": "left lung"
+   "severity": "severe",
+   "location": "left lung",
+   "idx": 198
   },
   {
    "uid": "a42191a190b7",
    "img": "img/a42191a190b7.png",
-   "idx": 199,
+   "prompt": "A Chest X-ray semantic mask with mild Consolidation on bilateral lung.",
    "disease": "Consolidation",
-   "prompt": "moderate consolidation in the right lower zone",
-   "prompt_version": "v2",
-   "parts": [
-    [
-     "moderate",
-     "mod"
-    ],
-    [
-     "consolidation",
-     "find"
-    ],
-    [
-     "in the",
-     "plain"
-    ],
-    [
-     "right lower zone",
-     "loc"
-    ]
-   ],
-   "ask": [
-    "anatomy",
-    "location",
-    "severity"
-   ],
-   "modifier": "moderate",
-   "location_text": "right lower zone"
+   "severity": "mild",
+   "location": "bilateral lung",
+   "idx": 199
   }
  ]
 }
