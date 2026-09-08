@@ -3,9 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
 <title>Chest X-ray mask reading study</title>
 <style>
   :root{
@@ -32,9 +29,6 @@
   }
   .brand{font-weight:600;letter-spacing:.01em}
   .brand span{color:var(--ink-faint);font-weight:400;margin-left:8px}
-  .build{color:var(--ink-faint);font-size:11.5px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
-  .who{cursor:pointer}
-  .who:hover{color:var(--ink)}
   .spacer{flex:1}
   .who{color:var(--ink-dim);font-size:13px}
   .ghost{
@@ -96,11 +90,11 @@
     border-radius:var(--r);padding:13px 15px;margin-bottom:18px
   }
   .prompt .req{color:var(--ink-faint);font-size:12px;margin-bottom:7px}
-  .req-line{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;line-height:1.5}
-  .req-line .mod{color:var(--warn);font-size:17px}
-  .req-line .find{font-size:20px;font-weight:600;letter-spacing:.01em}
-  .req-line .plain{color:var(--ink-faint);font-size:14px}
-  .req-line .loc{color:var(--accent);font-size:18px}
+  .req-line{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 20px}
+  .req-line .sev{color:var(--warn);font-size:16px}
+  .req-line .dis{font-size:20px;font-weight:600;letter-spacing:.01em}
+  .req-line .conn{color:var(--ink-faint);font-size:13px}
+  .req-line .loc{color:var(--accent);font-size:17px}
 
   .q{border-top:1px solid var(--line);padding:15px 0}
   .q:first-of-type{border-top:none;padding-top:4px}
@@ -141,7 +135,6 @@
 
 <header>
   <div class="brand">Mask reading study<span>chest X-ray semantic masks</span></div>
-  <span class="build" id="build"></span>
   <div class="spacer"></div>
   <div class="who" id="who"></div>
   <span class="sync" id="sync" title="connection to the results sheet"></span>
@@ -182,34 +175,24 @@ const SHEET_COLS = ["evaluator_id","evaluator_name","sample_id","image_path","te
                     "anatomy","accurate_location","accurate_severity","flag","note",
                     "time_spent_sec","review_started_at","review_submitted_at"];
 
-const BUILD = "2026-09-08a";        // bump on every push; shown in the header
-
-/* Prompts were regenerated. Scores are keyed on sample_id, so the version is
-   appended to it: the earlier round's rows stay in the sheet untouched instead of
-   being overwritten by answers given against different wording. */
-const PROMPT_VERSION = "v2";
 const LS = k => "maskeval_v1_" + k;
 const iso = () => new Date().toISOString();
 
 /* ============================================================ state */
-let ITEMS = [], BY_UID = {}, ORDER = [], cur = 0, res = {}, dimFocus = 0, curDims = [];
+let ITEMS = [], BY_UID = {}, ORDER = [], cur = 0, res = {}, dimFocus = 0;
 let evaluatorName = "", evaluatorId = "";     // id is the normalised name, used as the sheet key
 let outbox = [], sending = false, sendTimer = null, lastOk = null, lastErr = "", tPanel = 0;
 
 const normId = n => n.trim().toLowerCase().replace(/\s+/g, " ");
 
-/* Not every prompt states every thing. A finding rendered on the count axis has
-   no severity word, and cardiomegaly names no location, so those panels ask fewer
-   questions rather than inviting an answer to something the request never said. */
-function dimsFor(it){
-  const ask = it.ask || DIMS.map(d => d.key);
-  return DIMS.filter(d => ask.includes(d.key));
-}
-
-function promptHTML(it){
-  const esc = t => t.replace(/&/g, "&amp;").replace(/</g, "&lt;");
-  if (!it.parts) return `<span class="find">${esc(it.prompt || "")}</span>`;
-  return it.parts.map(([t, role]) => `<span class="${role}">${esc(t)}</span>`).join(" ");
+/* severity / finding / location, from items.json with a parse of the prompt as fallback */
+function parts(it){
+  let sev = it.severity || "", dis = it.disease || "", loc = it.location || "";
+  if (!dis){
+    const m = /with\s+(\S+)\s+(.+?)\s+on\s+(.+?)\.?\s*$/i.exec(it.prompt || "");
+    if (m){ sev = m[1]; dis = m[2]; loc = m[3]; }
+  }
+  return { sev, dis, loc };
 }
 
 /* deterministic per-reader shuffle so order effects do not line up across readers */
@@ -223,8 +206,7 @@ function seededShuffle(arr, seedStr){
 }
 
 async function boot(){
-  document.getElementById("build").textContent = BUILD;
-  const r = await fetch("items.json?v=" + BUILD, { cache: "no-store" });
+  const r = await fetch("items.json");
   ITEMS = (await r.json()).items;
   ITEMS.forEach(it => BY_UID[it.uid] = it);
 
@@ -256,7 +238,7 @@ function rowFor(uid){
   return {
     evaluator_id: evaluatorId,
     evaluator_name: evaluatorName,
-    sample_id: uid + "_" + PROMPT_VERSION,
+    sample_id: uid,
     image_path: it.img || "",
     text_prompt: it.prompt || "",
     anatomy: r.anatomy || "",
@@ -273,8 +255,7 @@ function rowFor(uid){
 /* One queued row per panel: a revised score replaces the pending one. */
 function queue(uid){
   if (!ENDPOINT) return;
-  const sid = uid + "_" + PROMPT_VERSION;
-  outbox = outbox.filter(x => !(x.sample_id === sid && x.evaluator_id === evaluatorId));
+  outbox = outbox.filter(x => !(x.sample_id === uid && x.evaluator_id === evaluatorId));
   outbox.push(rowFor(uid));
   localStorage.setItem(LS("outbox"), JSON.stringify(outbox));
   paintSync();
@@ -328,9 +309,7 @@ async function pullRemote(){
   (out.rows || []).forEach(row => { remote[String(row.sample_id || "").trim()] = row; });
   let restored = 0;
   (out.rows || []).forEach(row => {
-    let uid = String(row.sample_id || "").trim();
-    if (uid.endsWith("_" + PROMPT_VERSION)) uid = uid.slice(0, -(PROMPT_VERSION.length + 1));
-    else return;                       // a row from an earlier prompt version
+    const uid = String(row.sample_id || "").trim();
     if (!uid || !BY_UID[uid]) return;
     const mine = res[uid] || {};
     if ((mine.updated_at || "") >= (row.updated_at || "")) return;   // local edit is newer
@@ -418,10 +397,6 @@ function screenStart(){
     generated. The order is shuffled and the two are drawn identically, so judge each panel on its
     own. Roughly 15–20 seconds per panel is normal.</p>
 
-    <p class="lede">Requests are worded the way a report would word them, so not all of them state
-    all three things. A request that names no severity, or no location, simply does not ask that
-    question — those panels show two scales instead of three.</p>
-
     ${rubricHTML()}
   </div>`;
 
@@ -471,18 +446,14 @@ function start(name){
   outbox.forEach(r => { r.evaluator_id = evaluatorId; r.evaluator_name = evaluatorName; });
   localStorage.setItem(LS("outbox"), JSON.stringify(outbox));
   ORDER = seededShuffle(ITEMS.map((_,i)=>i), evaluatorId);
-  const who = document.getElementById("who");
-  who.textContent = evaluatorName;
-  who.title = "click to change the name";
-  who.onclick = () => screenStart();
+  document.getElementById("who").textContent = evaluatorName;
   cur = firstUnrated();
   render();
 }
 
 function complete(uid){
-  const r = res[uid], it = BY_UID[uid];
-  if (!r || !it) return false;
-  return (it.ask || DIMS.map(d => d.key)).every(k => r[k]);
+  const r = res[uid];
+  return !!r && DIMS.every(d => r[d.key]);
 }
 function doneCount(){
   return ITEMS.filter(it => complete(it.uid)).length;
@@ -504,8 +475,8 @@ function render(){
     localStorage.setItem(LS("res"), JSON.stringify(res));
   }
   tPanel = performance.now();
-  curDims = dimsFor(it);
-  dimFocus = curDims.findIndex(d => !r[d.key]);
+  const p = parts(it);
+  dimFocus = DIMS.findIndex(d => !r[d.key]);
   if (dimFocus < 0) dimFocus = 0;
 
   document.getElementById("prog").style.width = (100*cur/ORDER.length) + "%";
@@ -527,9 +498,14 @@ function render(){
     <section>
       <div class="prompt">
         <div class="req">Requested finding</div>
-        <div class="req-line">${promptHTML(it)}</div>
+        <div class="req-line">
+          <span class="sev">${p.sev}</span>
+          <span class="dis">${p.dis}</span>
+          <span class="conn">on</span>
+          <span class="loc">${p.loc}</span>
+        </div>
       </div>
-      ${curDims.map((d,di)=>`
+      ${DIMS.map((d,di)=>`
         <div class="q ${di===dimFocus?"active":""}" data-di="${di}">
           <h3>${d.title}</h3>
           <p>${d.ask}</p>
@@ -577,7 +553,7 @@ function setScore(key, val){
   document.querySelectorAll(`.scale button[data-k="${key}"]`).forEach(b =>
     b.setAttribute("aria-pressed", +b.dataset.v === val));
 
-  const next = curDims.findIndex(d => !(res[it.uid]||{})[d.key]);
+  const next = DIMS.findIndex(d => !(res[it.uid]||{})[d.key]);
   if (next < 0){ setTimeout(() => { cur++; render(); }, 220); }
   else { dimFocus = next; paintFocus(); }
 }
@@ -658,9 +634,9 @@ document.getElementById("btn-help").onclick = () => {
 document.addEventListener("keydown", e => {
   if (e.target.tagName === "INPUT") return;
   if (!ORDER.length || cur >= ORDER.length) return;
-  if (e.key >= "1" && e.key <= "5"){ setScore(curDims[dimFocus].key, +e.key); e.preventDefault(); }
-  else if (e.key === "ArrowDown"){ dimFocus = (dimFocus+1) % curDims.length; paintFocus(); e.preventDefault(); }
-  else if (e.key === "ArrowUp"){ dimFocus = (dimFocus+curDims.length-1) % curDims.length; paintFocus(); e.preventDefault(); }
+  if (e.key >= "1" && e.key <= "5"){ setScore(DIMS[dimFocus].key, +e.key); e.preventDefault(); }
+  else if (e.key === "ArrowDown"){ dimFocus = (dimFocus+1) % DIMS.length; paintFocus(); e.preventDefault(); }
+  else if (e.key === "ArrowUp"){ dimFocus = (dimFocus+DIMS.length-1) % DIMS.length; paintFocus(); e.preventDefault(); }
   else if (e.key === "Enter"){ cur++; render(); }
   else if (e.key === "Backspace"){ if (cur>0){ cur--; render(); } e.preventDefault(); }
   else if (e.key.toLowerCase() === "f"){ const f = document.getElementById("flag"); if (f) f.click(); }
